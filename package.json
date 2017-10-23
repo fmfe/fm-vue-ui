@@ -4,6 +4,7 @@
   "description": "Basic vue components",
   "author": "fmfe",
   "license": "MIT",
+  "private": false,
   "files": [],
   "scripts": {
     "prepush": "npm run ilint -q",
