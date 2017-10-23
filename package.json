@@ -4,9 +4,7 @@
   "description": "Basic vue components",
   "author": "fmfe",
   "license": "MIT",
-  "files": [
-    
-  ],
+  "files": [],
   "scripts": {
     "prepush": "npm run ilint -q",
     "dev": "npx cross-env NODE_ENV=development node ./build/dev-server.js",
@@ -14,9 +12,7 @@
     "ilint": "npx eslint src/**/*.js src/**/*.vue",
     "fix": "npx eslint --fix src/**/*.js src/**/*.vue"
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
