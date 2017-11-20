@@ -1,22 +1,19 @@
-'use strict';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HappyPack = require('happypack');
 
-let path = require('path');
-let webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let CopyWebpackPlugin = require('copy-webpack-plugin');
-let HappyPack = require('happypack');
+const getHappyPackConfig = require('./happypack');
 
-let getHappyPackConfig = require('./happypack');
-
-let config = require('../config');
+const config = require('../config');
 
 const env = process.env.NODE_ENV || 'development';
-const apiPrefix = env === 'development' ? config.dev.prefix : config.build.prefix;
 
-console.log('---------env------:', env, '------apiPrefix-------:', apiPrefix);
+console.log('---------env------:', env);
 
 module.exports = {
-    context: path.resolve(__dirname, "../src"),
+    context: path.resolve(__dirname, '../sites'),
     module: {
         noParse: [/static|assets/],
         rules: [
@@ -54,12 +51,11 @@ module.exports = {
         ]
     },
 
-    resolve:{
-        extensions:[".vue",".js"],
+    resolve: {
+        extensions: ['.vue', '.js'],
         modules: [path.join(__dirname, '../node_modules')],
-        alias:{
-            '@src': path.resolve(__dirname, '../src'),
-            '@components': path.resolve(__dirname, '../src/components'),
+        alias: {
+            '@sites': path.resolve(__dirname, '../sites'),
             'vue$': 'vue/dist/vue.js'
         }
     },
@@ -76,15 +72,15 @@ module.exports = {
         'babel-polyfill': 'window'
     },
 
-    plugins:[
+    plugins: [
 
         new webpack.DefinePlugin({
             'window.PREFIX': JSON.stringify(apiPrefix)
         }),
 
-        //copy assets
+        // copy assets
         new CopyWebpackPlugin([
-            {context: '../src', from: 'assets/**/*', to: path.resolve(__dirname, '../dist'), force: true}
+            { context: '../src', from: 'assets/**/*', to: path.resolve(__dirname, '../dist'), force: true }
         ]),
 
         new HappyPack(getHappyPackConfig({
@@ -103,18 +99,17 @@ module.exports = {
             loaders: ['babel-loader']
         })),
 
-
         // https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
-          filename: 'index.html',
-          template: 'index.html',
-          inject: true,
-          env: process.env.NODE_ENV,
-          minify: {
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true,
+            env: process.env.NODE_ENV,
+            minify: {
                 removeComments: true,
                 collapseWhitespace: true,
                 removeAttributeQuotes: false
-          }
+            }
         })
     ]
 };
