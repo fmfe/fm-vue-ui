@@ -1,4 +1,4 @@
-.model-dialog-wrap{
+.model-dialog-wrap {
     position: fixed;
     z-index: 100002;
     top: 0;
@@ -9,7 +9,7 @@
     //background-color: rgba(0, 0, 0, 0.298);
 }
 
-.model-dialog-mask{
+.model-dialog-mask {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,20 +18,20 @@
     overflow: hidden;
 }
 
-.dialog-close-icon{
+.dialog-close-icon {
     position: absolute;
     top: 21px;
     right: 20px;
     width: 10px;
     height: 10px;
     cursor: pointer;
-    background: url("/assets/icon.png")  -338px -0px no-repeat;
-    &:hover{
-        background-position: -349px -0px;
+    background: url("/assets/icon.png")  -338px 0 no-repeat;
+    &:hover {
+        background-position: -349px 0;
     }
 }
 
-.model-dialog{
+.model-dialog {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,7 +42,7 @@
     box-shadow: 0 4px 20px 1px rgba(0,0,0,0.2);
     border-radius: 0 0 3px 3px;
     border-top: 2px solid #ff8030;
-    .dialog-top{
+    .dialog-top {
         width: 300px;
         height: 50px;
         line-height: 50px;
@@ -52,22 +52,22 @@
             margin: 0 0 0 20px;
         }
     }
-    .dialog-middle{
+    .dialog-middle {
         font-weight: 400;
         width: 260px;
         margin: 20px;
         text-align: center;
-        span{
+        span {
             display: block;
             font-size: 16px;
             line-height: 22px;
         }
     }
-    .dialog-bottom{
+    .dialog-bottom {
         text-align: center;
         cursor: pointer;
         margin-bottom: 20px;
-        span{
+        span {
             display: inline-block;
             width: 80px;
             height: 30px;
@@ -75,18 +75,18 @@
             text-align: center;
             font-size: 15px;
             border-radius: 2px;
-            &.confirm{
+            &.confirm {
                 background: #ff6200;
                 color: #fff;
-                &:hover{
+                &:hover {
                     opacity: 0.8;
                 }
             }
-            &.cancel{
+            &.cancel {
                 border: 1px solid #e1e2e6;
                 color: #333;
                 margin-left: 10px;
-                &:hover{
+                &:hover {
                     border: 1px solid #ff6200;
                     color: #ff6200;
                 }
@@ -96,7 +96,7 @@
 }
 
 // transition
-.dialog-enter{
+.dialog-enter {
     opacity: 0;
 }
 
@@ -104,7 +104,7 @@
     transition: all .5s ease;
 }
 
-.dialog-leave{
+.dialog-leave {
     opacity: 1;
 }
 
