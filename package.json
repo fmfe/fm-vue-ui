@@ -10,11 +10,14 @@
     "prepush": "npm run ilint -q",
     "dev": "npx cross-env NODE_ENV=development node ./build/dev-server.js",
     "build": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.prod.config.js --progress --hide-modules",
+    "build:entry": "node build/build-entry.js",
     "ilint": "npx eslint --ext .vue,.js src/**/*.js src/**/*.vue",
     "lint:style": "npx stylelint \"{site,components}/**/*.less\" --syntax less",
     "fix": "npx eslint --ext .vue,.js --fix src/**/*.js src/**/*.vue"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.5.3"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
@@ -64,12 +67,11 @@
     "stylelint-config-standard": "^17.0.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
-    "vue": "^2.4.4",
-    "vue-loader": "^13.0.5",
     "vue-markdown-loader": "^2.2.2",
-    "vue-router": "^2.7.0",
+    "vue-router": "^3.0.1",
+    "vue-loader": "^13.0.5",
     "vue-style-loader": "^3.0.3",
-    "vue-template-compiler": "^2.4.4",
+    "vue-template-compiler": "^2.5.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-md5-hash": "^0.0.5",
