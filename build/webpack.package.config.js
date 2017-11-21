@@ -3,15 +3,17 @@ const webpack = require('webpack');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const os = require('os');
 
+const config = require('./config');
+
 module.exports = {
     entry: {
         index: path.resolve(__dirname, './src/index')
     },
     output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].js',
-        library: 'FMVueUi',
-        libraryTarget: 'umd'
+        path: path.join(__dirname, './lib'),
+        filename: 'fm-vue-ui.common.js',
+        library: 'fm-vue-ui',
+        libraryTarget: 'commonjs2'
     },
     module: {
         rules: [
@@ -34,22 +36,24 @@ module.exports = {
             }
         ]
     },
+    externals: config.externals,
+    alias: config.alias,
     plugins: [
-        new ParallelUglifyPlugin({
-            workerCount: os.cpus().length,
-            cacheDir: '.cache/',
-            uglifyJS: {
-                compress: {
-                    warnings: false,
-                    /* eslint-disable */
-                    drop_debugger: true,
-                    drop_console: true
-                },
-                comments: false,
-                sourceMap: true,
-                mangle: true
-            }
-        }),
+        // new ParallelUglifyPlugin({
+        //     workerCount: os.cpus().length,
+        //     cacheDir: '.cache/',
+        //     uglifyJS: {
+        //         compress: {
+        //             warnings: false,
+        //             /* eslint-disable */
+        //             drop_debugger: true,
+        //             drop_console: true
+        //         },
+        //         comments: false,
+        //         sourceMap: true,
+        //         mangle: true
+        //     }
+        // }),
         new webpack.optimize.ModuleConcatenationPlugin()
     ]
-}
+};
