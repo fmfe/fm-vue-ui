@@ -1,11 +1,16 @@
 {
   "name": "@fmfe/fm-vue-ui",
   "version": "0.0.1",
-  "description": "Basic vue components",
+  "description": "Basic Vue Components for FM",
+  "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
   "license": "MIT",
   "private": false,
-  "files": [],
+  "files": [
+    "lib",
+    "src",
+    "components"
+  ],
   "scripts": {
     "prepush": "npm run lint -q",
     "dev:docs": "npx cross-env NODE_ENV=development node ./build/dev-server.js",
@@ -72,14 +77,15 @@
     "stylelint-config-standard": "^17.0.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
+    "vue-loader": "^13.0.5",
     "vue-markdown-loader": "^2.2.2",
     "vue-router": "^3.0.1",
-    "vue-loader": "^13.0.5",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-md5-hash": "^0.0.5",
+    "webpack-node-externals": "^1.6.0",
     "webpack-parallel-uglify-plugin": "^1.0.0"
   },
   "engines": {
