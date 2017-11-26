@@ -119,7 +119,7 @@ module.exports = {
         alias: {
             '@docs': path.resolve(__dirname, '../docs'),
             'main': path.resolve(__dirname, '../src'),
-            'vue$': 'vue/dist/vue.js'
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
 
@@ -133,18 +133,18 @@ module.exports = {
 
     plugins: [
         // copy assets
-        new CopyWebpackPlugin([
-            { context: '../docs', from: 'assets/**/*', to: path.resolve(__dirname, '../docs/dist'), force: true }
-        ]),
+        // new CopyWebpackPlugin([
+        //     { context: '../docs', from: 'assets/**/*', to: path.resolve(__dirname, '../docs/dist'), force: true }
+        // ]),
 
         new HappyPack(getHappyPackConfig({
             id: 'vue',
             loaders: [{
-                path: 'vue-loader',
-                query: {
-                    // https://github.com/vuejs/vue-loader/issues/863
-                    esModule: false
-                }
+                path: 'vue-loader'
+                // query: {
+                //     // https://github.com/vuejs/vue-loader/issues/863
+                //     esModule: false
+                // }
             }]
         })),
 
