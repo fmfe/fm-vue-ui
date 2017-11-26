@@ -26,7 +26,7 @@
     "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less"
   },
   "dependencies": {
-    "vue": "^2.5.3"
+    "vue": "^2.5.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
@@ -82,12 +82,12 @@
     "transliteration": "^1.6.2",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
-    "vue-loader": "^13.0.5",
+    "vue-loader": "^13.5.0",
     "vue-markdown-loader": "^2.2.2",
     "vue-router": "^3.0.1",
     "vue-style-loader": "^3.0.3",
-    "vue-template-compiler": "^2.5.3",
-    "webpack": "^3.6.0",
+    "vue-template-compiler": "^2.5.8",
+    "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.1",
     "webpack-md5-hash": "^0.0.5",
     "webpack-node-externals": "^1.6.0",
