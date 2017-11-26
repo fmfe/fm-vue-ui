@@ -11,8 +11,7 @@ const install = function (Vue, opts = {}) {
     if (install.installed) return;
 
     components.map(component => {
-        // Vue.component(component.name, component);
-        Vue.use(component);
+        Vue.component(component.name, component);
     });
 
     Vue.prototype.$fmdialog = Dialog;
@@ -28,3 +27,4 @@ export default {
     Button,
     Dialog
 };
+
