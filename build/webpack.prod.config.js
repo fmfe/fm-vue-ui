@@ -1,12 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const os = require('os');
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin');
 const HappyPack = require('happypack');
 
 const getHappyPackConfig = require('./happypack');
@@ -15,7 +15,7 @@ const prodConfig = require('./webpack.base.config');
 const config = require('../config');
 
 prodConfig.module.rules.unshift({
-    test:/\.less$/,
+    test: /\.less$/,
     use: ExtractTextPlugin.extract({
         fallback: 'vue-style-loader',
         use: ['happypack/loader?id=less-prod']
@@ -30,7 +30,7 @@ prodConfig.module.rules.unshift({
 
 prodConfig.plugins = (prodConfig.plugins || []).concat([
     new CleanWebpackPlugin(['dist'], {
-        root: path.join(__dirname, '../'),
+        root: path.join(__dirname, '../docs'),
         verbose: true,
         dry: false
     }),
@@ -113,7 +113,7 @@ prodConfig.plugins = (prodConfig.plugins || []).concat([
 
 module.exports = Object.assign({}, prodConfig, {
     entry: {
-        app: path.resolve(__dirname, '../sites/page/index.js')
+        app: path.resolve(__dirname, '../docs/entry.js')
     },
     output: {
         filename: '[name].[chunkhash:8].js',

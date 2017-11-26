@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const HappyPack = require('happypack');   
+const HappyPack = require('happypack');
 
 const getHappyPackConfig = require('./happypack');
 
 const devConfig = require('./webpack.base.config');
 const config = require('../config');
-const url = `http://localhost:${config.dev.port}`;
+const url = `http://localhost:${config.dev.port}/index`;
 
 devConfig.module.rules.unshift({
     test: /\.less$/,
@@ -70,7 +70,7 @@ module.exports = Object.assign({}, devConfig, {
         app: [
             'webpack/hot/dev-server',
             `webpack-dev-server/client?http://localhost:${config.dev.port}/`,
-            path.resolve(__dirname, '../src/page/index.js')
+            path.resolve(__dirname, '../docs/entry.js')
         ]
     },
     output: {
