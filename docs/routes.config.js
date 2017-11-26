@@ -4,11 +4,12 @@ const LANG = 'zh-CN';
 const routes = [];
 
 function loadMD (name) {
-    return r => require.ensure([], () => r(require(`./examples/${name}.md`)), 'examples');
+    return resolve => import(`./examples/${name}.md`).then(component => resolve(component || component.default));
+    // return r => require.ensure([], () => r(require(`./examples/${name}.md`)), 'examples');
 };
 
 function loadPages (name) {
-    return r => require.ensure([], () => r(require(`./pages/${name}.vue`)), 'pages');
+    return resolve => import(`./pages/${name}.vue`).then(component => resolve(component || component.default));
 };
 
 function regiterRoute (navConfig) {
