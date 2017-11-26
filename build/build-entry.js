@@ -35,6 +35,7 @@ export default {
     install,
 {{list}}
 };
+
 `;
 
 const ComponentNames = Object.keys(Components);
