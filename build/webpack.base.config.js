@@ -71,7 +71,6 @@ module.exports = {
                                     const html = convert(stripTags(content, ['script', 'style'])).replace(/(<[^>]*)=""(?=.*>)/g, '$1');
                                     const descriptionHTML = description ? md.render(description) : '';
 
-                                    // return '<docs-demo-block><summary>' + m[1] + '</summary>\n';
                                     return `<docs-demo-block> 
                                                 <div class="source" slot="source">${html}</div>
                                                 ${descriptionHTML}`;
@@ -119,6 +118,7 @@ module.exports = {
         modules: [path.join(__dirname, '../node_modules')],
         alias: {
             '@docs': path.resolve(__dirname, '../docs'),
+            'main': path.resolve(__dirname, '../src'),
             'vue$': 'vue/dist/vue.js'
         }
     },
@@ -155,8 +155,8 @@ module.exports = {
 
         // https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
+            template: 'tpl.html',
             filename: 'index.html',
-            template: 'index.html',
             inject: true,
             env: process.env.NODE_ENV,
             minify: {
