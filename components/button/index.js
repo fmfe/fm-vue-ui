@@ -4,4 +4,4 @@ FMButton.install = function (Vue) {
     Vue.component(FMButton.name, FMButton);
 };
 
-export default Button;
+export default FMButton;

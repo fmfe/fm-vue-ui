@@ -1,2 +1,2 @@
-import Dialog from './src/main.js';
-export default Dialog;
+import FMDialog from './src/main.js';
+export default FMDialog;
