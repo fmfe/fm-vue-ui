@@ -9,6 +9,29 @@ body, html {
     background-color: #f4f4f4;
 }
 
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+a {
+    text-decoration: none
+}
+
+h1, h2, h3, h4, h5, h6 {
+    cursor: pointer;
+    a {
+        visibility: hidden;
+        color: #ff6200
+    }
+    &:hover {
+        a {
+            visibility: visible;
+        }
+    }
+}
+
 .docs-content-wrap {
     position: relative;
     padding-top: 80px;
@@ -18,9 +41,12 @@ body, html {
     display: inline-block;
     height: 100%;
     width: 788px;
-    margin-left: 230px;
+    margin-left: 185px;
     padding: 15px;
     background: #fff;
+    & > p {
+        margin-left: 15px;
+    }
 }
 
 code {
