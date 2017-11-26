@@ -9,7 +9,7 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import FMUI from '../src/index';
+import FMUI from 'main/index';
 import routes from './routes.config';
 import entry from './entry.vue';
 import DocsHeader from './components/header.vue';
