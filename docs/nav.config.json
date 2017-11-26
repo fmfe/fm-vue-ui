@@ -1,0 +1,28 @@
+{
+    "zh-CN": [
+        {
+            "name": "guide",
+            "title": "开发指南",
+            "path": "/index"
+        },
+        {
+            "title": "代码规范",
+            "href": "https://github.com/fmfe/fe-coding-style-guide/"
+        },
+        {
+            "title": "基础组件",
+            "children": [
+                {
+                    "title": "Button 按钮",
+                    "name": "button",
+                    "path": "/button"
+                },
+                {
+                    "title": "Dialog 弹框",
+                    "name": "dialog",
+                    "path": "/dialog"
+                }
+            ]
+        }
+    ]
+}
