@@ -11,7 +11,8 @@ const install = function (Vue, opts = {}) {
     if (install.installed) return;
 
     components.map(component => {
-        Vue.component(component.name, component);
+        // Vue.component(component.name, component);
+        Vue.use(component);
     });
 
     Vue.prototype.$fmdialog = Dialog;
