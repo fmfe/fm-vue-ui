@@ -23,7 +23,7 @@
                     "path": "/button"
                 },
                 {
-                    "title": "Dialog 弹框",
+                    "title": "Dialog 对话框",
                     "name": "dialog",
                     "path": "/dialog"
                 }

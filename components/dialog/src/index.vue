@@ -1,6 +1,6 @@
 <template>
     <transition name="dialog">
-        <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="" :style="{zIndex: 100002}">
+        <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop" :style="{zIndex: 100002}">
             <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="model-dialog">
                 <div class="dialog-top" v-if="!validType">
@@ -8,7 +8,7 @@
                     <i class="dialog-close-icon" @click="onCancel"></i>
                 </div>
                 <div class="dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
-                    <img :src="imgUrl" v-if="validType">
+                    <i class="dialog-middle-icon" v-if="validType" :class="iconClass"></i>
                     <span v-text="message" :style="{margin: validType ? '5px 0 15px' : 0}"></span>
                 </div>
                 <div class="dialog-bottom" v-if="!validType">
@@ -72,18 +72,24 @@
         },
 
         computed: {
-            imgUrl () {
+            iconClass () {
                 if (this.type === 'success') {
-                    return '/assets/modify-ok.png';
+                    return 'dialog-success-icon';
                 }
 
                 if (this.type === 'failure') {
-                    return '/assets/modify-failure.png';
+                    return 'dialog-failure-icon';
                 }
             },
 
             validType () {
                 return ['success', 'failure'].includes(this.type);
+            }
+        },
+
+        methods: {
+            preventStop () {
+
             }
         }
     };
