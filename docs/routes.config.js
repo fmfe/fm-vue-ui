@@ -9,7 +9,7 @@ function loadMD (name) {
 };
 
 function loadPages (name) {
-    return resolve => import(`./pages/${name}.vue`).then(component => resolve(component || component.default));
+    return resolve => import(`./pages/${name}.md`).then(component => resolve(component || component.default));
 };
 
 function regiterRoute (navConfig) {
