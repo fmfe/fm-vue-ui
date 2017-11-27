@@ -6,13 +6,11 @@ const os = require('os');
 const config = require('./config');
 
 module.exports = {
-    entry: {
-        index: path.resolve(__dirname, './src/index')
-    },
+    entry: path.join(__dirname, '../src/index'),
     output: {
-        path: path.join(__dirname, './lib'),
+        path: path.join(__dirname, '../lib'),
         filename: 'fm-vue-ui.common.js',
-        library: 'fm-vue-ui',
+        library: 'FMUI',
         libraryTarget: 'commonjs2'
     },
     module: {
@@ -37,7 +35,9 @@ module.exports = {
         ]
     },
     externals: config.externals,
-    alias: config.alias,
+    resolve: {
+        alias: config.alias
+    },
     plugins: [
         // new ParallelUglifyPlugin({
         //     workerCount: os.cpus().length,

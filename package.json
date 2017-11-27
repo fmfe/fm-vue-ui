@@ -1,6 +1,6 @@
 {
   "name": "@fmfe/fm-vue-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Basic Vue Components for FM",
   "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
@@ -17,7 +17,8 @@
     "build:docs": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.prod.config.js --progress --hide-modules && mv ./docs/dist/index.html ./docs/",
     "build:entry": "node build/build-entry.js",
     "build:package": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.package.config.js --progress --hide-modules",
-    "prepublishOnly": "npm run build:entry && npm run build:package && npm run build:docs",
+    "build:components": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.components.config.js --progress --hide-modules",
+    "prepublishOnly": "npm run build:entry && npm run build:package && npm run build:components",
     "lint": "npm run lint:vue & npm run lint:style",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
     "lint:style": "npx stylelint \"{sites,components}/**/*.less\" --syntax less",
