@@ -4,7 +4,7 @@ Basic vue components.
 ## Development
 
 ```
-git clone git@github.com:fmfe/fm-vue-ui.git
+git clone -b dev git@github.com:fmfe/fm-vue-ui.git
 
 cd fm-vue-ui
 
