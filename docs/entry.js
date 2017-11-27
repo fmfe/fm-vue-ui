@@ -24,7 +24,7 @@ Vue.component('docs-side-nav', DocsSideNav);
 
 const router = new VueRouter({
     mode: 'history',
-    base: __dirname,
+    base: '/fm-vue-ui/',
     fallback: true,
     routes
 });
