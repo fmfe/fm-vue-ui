@@ -10,7 +10,7 @@ const compiler = webpack(webpackDevConfig);
 const server = new WebpackDevServer(compiler, webpackDevConfig.devServer);
 
 const env = process.env.NODE_ENV || 'development';
-const url = `localhost:${config.dev.port}/index`;
+const url = `localhost:${config.dev.port}/fm-vue-ui/index`;
 
 let spinner = ora({
     text: 'Webpack 正在编译...\n',

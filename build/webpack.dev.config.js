@@ -7,7 +7,7 @@ const getHappyPackConfig = require('./happypack');
 
 const devConfig = require('./webpack.base.config');
 const config = require('../config');
-const url = `http://localhost:${config.dev.port}/index`;
+const url = `http://localhost:${config.dev.port}/fm-vue-ui/index`;
 
 devConfig.module.rules.unshift({
     test: /\.less$/,
