@@ -28,7 +28,7 @@ const alias = {
     'fm-vue-ui': path.resolve(__dirname, '../')
 };
 
-export default {
+module.exports = {
     alias,
     externals
 };

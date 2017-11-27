@@ -9,7 +9,7 @@ const config = require('./config');
 module.exports = {
     entry: Components,
     output: {
-        path: path.join(__dirname, './lib'),
+        path: path.join(__dirname, '../lib'),
         filename: '[name].js',
         libraryTarget: 'commonjs2'
     },
@@ -35,7 +35,9 @@ module.exports = {
         ]
     },
     externals: config.externals,
-    alias: config.alias,
+    resolve: {
+        alias: config.alias
+    },
     plugins: [
         // new ParallelUglifyPlugin({
         //     workerCount: os.cpus().length,
