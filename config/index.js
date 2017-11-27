@@ -11,6 +11,6 @@ module.exports = {
     build: {
         env: 'production',
         assetsRoot: path.resolve(__dirname, '../docs/dist'),
-        assetsPublicPath: '/dist/'
+        assetsPublicPath: '/fm-vue-ui/dist/'
     }
 };
