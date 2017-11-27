@@ -6,6 +6,11 @@
             "path": "/index"
         },
         {
+            "name": "i18n",
+            "title": "国际化",
+            "path": "/i18n"
+        },
+        {
             "title": "代码规范",
             "href": "https://github.com/fmfe/fe-coding-style-guide/"
         },
