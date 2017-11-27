@@ -4,7 +4,7 @@ module.exports = {
     dev: {
         env: 'development',
         assetsRoot: path.resolve(__dirname, '../docs/dist'),
-        assetsPublicPath: '/dist/',
+        assetsPublicPath: '/fm-vue-ui/dist/',
         contentBase: path.resolve(__dirname, '../docs/dist'),
         port: 3000
     },
