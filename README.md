@@ -1,3 +1,4 @@
+[![build pass](https://api.travis-ci.org/fmfe/fm-vue-ui.svg?branch=master)](https://travis-ci.org/dwqs/tiny-dom-helpers) ![npm-version](https://img.shields.io/npm/v/@fmfe/fm-vue-ui.svg) ![license](https://img.shields.io/npm/l/@fmfe/fm-vue-ui.svg)
 ## fm-vue-ui
 Basic vue components.
 
