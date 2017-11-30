@@ -1,5 +1,6 @@
-let path = require('path');
+const path = require('path');
 
+const webpackTestConfig = require('../build/webpack.test.config');
 /* eslint-disable */
 let isCI = process.env.CONTINUOUS_INTEGRATION ? true : false;
 
@@ -22,7 +23,8 @@ module.exports = config => {
             'karma-sourcemap-loader',
             'karma-webpack',
             'karma-mocha-reporter',
-            'karma-chai'
+            'karma-chai',
+            'karma-coverage'
         ],
         reporters: ['progress', 'mocha', 'coverage'],
         singleRun: true,
@@ -41,27 +43,19 @@ module.exports = config => {
                 error: 'x'
             }
         },
+        coverageReporter: {
+            dir: './coverage',
+            reporters: [
+              { type: 'lcov', subdir: '.' },
+              { type: 'text-summary' }
+            ]
+        },
         preprocessors: {
             './index.js': ['webpack', 'sourcemap']
         },
         logLevel: config.LOG_INFO,
         colors: true,
-        webpack: {
-            devtool: 'inline-source-map',
-            module: {
-                rules: [
-                    {
-                        test: /\.js$/,
-                        exclude: /node_modules/,
-                        loader: 'babel-loader'
-                    }
-                ]
-            },
-            resolve: {
-                extensions: ['.js'],
-                modules: [path.join(__dirname, '../node_modules')]
-            }
-        },
+        webpack: webpackTestConfig,
         webpackMiddleware: {
             noInfo: true
         }

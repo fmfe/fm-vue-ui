@@ -24,7 +24,8 @@
     "lint:style": "npx stylelint \"{sites,components}/**/*.less\" --syntax less",
     "fix": "npm run fix:vue & npm run fix:style",
     "fix:vue": "npx eslint --ext .vue,.js --fix src/**/*.js components/**/*.vue",
-    "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less"
+    "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less",
+    "test": "npx karma start test/karma.conf.js --single-run"
   },
   "dependencies": {
     "vue": "^2.5.8"
@@ -37,6 +38,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.17",
     "compression-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.1.1",
