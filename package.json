@@ -85,6 +85,7 @@
     "transliteration": "^1.6.2",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
+    "vue-i18n": "^7.3.2",
     "vue-loader": "^13.5.0",
     "vue-markdown-loader": "^2.2.2",
     "vue-router": "^3.0.1",
