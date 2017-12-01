@@ -16,6 +16,9 @@ import DocsHeader from './components/header.vue';
 import DocsSideNav from './components/side-nav.vue';
 import DocsDemoBlock from './components/demo-block.vue';
 
+import i18n from './i18n/index';
+FMUI.locale.setI18n(i18n);
+
 Vue.use(FMUI);
 Vue.use(VueRouter);
 Vue.component('docs-demo-block', DocsDemoBlock);
@@ -31,5 +34,6 @@ const router = new VueRouter({
 
 new Vue({
     render: h => h(entry),
-    router
+    router,
+    i18n
 }).$mount('#app');

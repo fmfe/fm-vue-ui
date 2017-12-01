@@ -4,7 +4,7 @@
             <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="model-dialog">
                 <div class="dialog-top" v-if="!validType">
-                    <h1 v-text="this.title"></h1>
+                    <h1>{{title ? title : vuei18n.t('dialog.title')}}</h1>
                     <i class="dialog-close-icon" @click="onCancel"></i>
                 </div>
                 <div class="dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
@@ -12,8 +12,12 @@
                     <span v-text="message" :style="{margin: validType ? '5px 0 15px' : 0}"></span>
                 </div>
                 <div class="dialog-bottom" v-if="!validType">
-                    <span class="confirm" v-text="confirmBtnText" @click="onConfirm"></span>
-                    <span class="cancel" v-text="cancelBtnText" v-if="!isSingle" @click="onCancel"></span>
+                    <span class="confirm" @click="onConfirm">
+                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('dialog.confirmText')}}
+                    </span>
+                    <span class="cancel" v-if="!isSingle" @click="onCancel">
+                        {{ cancelBtnText ? cancelBtnText : vuei18n.t('dialog.cancelText')}}
+                    </span>
                 </div>
             </div>
         </div>
@@ -22,6 +26,8 @@
 
 <script>
     import './index.less';
+
+    import locale from 'main/locale/i18n';
 
     export default {
         name: 'fm-dialog',
@@ -36,7 +42,7 @@
             },
             title: {
                 type: String,
-                default: '请确认'
+                default: ''
             },
             type: {
                 type: String,
@@ -52,11 +58,11 @@
             },
             cancelBtnText: {
                 type: String,
-                default: '取消'
+                default: ''
             },
             confirmBtnText: {
                 type: String,
-                default: '确认'
+                default: ''
             },
             isSingle: {
                 type: Boolean,
@@ -67,7 +73,8 @@
         },
         data () {
             return {
-                shown: false
+                shown: false,
+                vuei18n: locale.getI18n()
             };
         },
 

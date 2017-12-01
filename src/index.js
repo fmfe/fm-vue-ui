@@ -5,6 +5,8 @@ const version = process.env.VERSION || require('../package.json').version;
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
 
+import locale from './locale/i18n';
+
 const components = [
     Button
 ];
@@ -26,6 +28,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
     version,
     install,
+    locale,
     Button,
     Dialog
 };
@@ -33,6 +36,7 @@ export {
 export default {
     version: '0.0.2',
     install,
+    locale,
     Button,
     Dialog
 };
