@@ -30,5 +30,6 @@
         no-unused-vars: 0,
         no-constant-condition: 0,
         no-undef: 0,
+        handle-callback-err: 0
     }
 }
