@@ -1,0 +1,7 @@
+{
+    "dialog": {
+        "title": "Confirm",
+        "confirmText": "Comfirm",
+        "cancelText": "Cancel"
+    }
+}

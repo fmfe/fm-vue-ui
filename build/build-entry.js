@@ -14,6 +14,8 @@ const version = process.env.VERSION || require('../package.json').version;
 
 {{include}}
 
+import locale from './locale/i18n';
+
 const components = [
 {{install}}
 ];
@@ -35,12 +37,14 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
     version,
     install,
+    locale,
 {{list}}
 };
 
 export default {
     version: '{{version}}',
     install,
+    locale,
 {{list}}
 };
 

@@ -1,0 +1,7 @@
+{
+    "dialog": {
+        "title": "请确认",
+        "confirmText": "确认",
+        "cancelText": "取消"
+    }
+}
