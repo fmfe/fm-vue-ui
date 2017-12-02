@@ -1,7 +1,7 @@
 ## 安装
 ### npm 安装
 ```
-npm i @fmfe/fm-vue-ui -S
+npm i fm-vue-ui -S
 ```
 
 ### 引入 FMUI
@@ -13,7 +13,8 @@ npm i @fmfe/fm-vue-ui -S
 
 ```html
 import Vue from 'vue'
-import FMUI from '@fmfe/fm-vue-ui'
+import FMUI from 'fm-vue-ui'
+import 'fm-vue-ui/lib/theme-default/index.css'
 import App from './App.vue'
 
 Vue.use(FMUI)
@@ -51,7 +52,8 @@ npm install babel-plugin-component -D
   ],
   "plugins": [["component", [
     {
-      "libraryName": "fm-vue-ui"
+      "libraryName": "fm-vue-ui",
+      "styleLibraryName": "theme-default"
     }
   ]]]
 ```
@@ -60,7 +62,7 @@ npm install babel-plugin-component -D
 
 ```html
 import Vue from 'vue'
-import { Button } from '@fmfe/fm-vue-ui'
+import { Button } from 'fm-vue-ui'
 import App from './App.vue'
 
 Vue.component(Button.name, Button)
