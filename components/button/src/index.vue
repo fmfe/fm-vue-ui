@@ -5,8 +5,6 @@
 </template>
 
 <script>
-    import './index.less';
-
     export default {
         name: 'fm-button',
         props: {
