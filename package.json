@@ -11,6 +11,15 @@
     "src",
     "components"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fmfe/fm-vue-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fmfe/fm-vue-ui/issues"
+  },
+  "homepage": "https://fmfe.github.io/fm-vue-ui/index",
+  "style": "lib/theme-default/index.css",
   "scripts": {
     "prepush": "npm run lint -q",
     "dev:docs": "npx cross-env NODE_ENV=development node ./build/dev-server.js",
@@ -29,7 +38,7 @@
     "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less",
     "test": "npx karma start test/karma.conf.js --single-run"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^2.5.8"
   },
   "devDependencies": {
