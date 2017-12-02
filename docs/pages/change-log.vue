@@ -3,6 +3,15 @@
         <div class="heading">更新日志</div>
         <ul class="timeline">
             <li>
+                <h3>0.1.0</h3>
+                <em>2017/12/02</em>
+                <ul>
+                    <li>样式集中管理，便于主题式开发</li>
+                    <li>更换包名为 fm-vue-ui，以支持样式的按需加载</li>
+                    <li>更改国际化支持方式</li>
+                </ul>
+            </li>
+            <li>
                 <h3>0.0.5</h3>
                 <em>2017/12/02</em>
                 <ul>
