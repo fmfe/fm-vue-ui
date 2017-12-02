@@ -33,6 +33,6 @@ function writeFile (err, result) {
 }
 
 require('babel-core').transformFile(i18nPath, {
-    plugins: ['transform-es2015-modules-umd'],
+    plugins: ['transform-es2015-modules-commonjs'],
     moduleId: 'i18n'
 }, writeFile);

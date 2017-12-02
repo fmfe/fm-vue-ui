@@ -1,5 +1,5 @@
 <template>
-    <transition name="dialog">
+    <transition name="fm-common">
         <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop" :style="{zIndex: 100002}">
             <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="model-dialog">
@@ -25,10 +25,6 @@
 </template>
 
 <script>
-    import './index.less';
-
-    import locale from 'main/locale/i18n';
-
     export default {
         name: 'fm-dialog',
         props: {
@@ -74,7 +70,7 @@
         data () {
             return {
                 shown: false,
-                vuei18n: locale.getI18n()
+                vuei18n: window.__vueI18n
             };
         },
 

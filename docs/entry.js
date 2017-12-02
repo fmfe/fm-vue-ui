@@ -10,6 +10,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import FMUI from 'main/index';
+import locale from 'main/locale/i18n';
+import 'fm-vue-ui/theme-default/src/index.less';
+
 import routes from './routes.config';
 import entry from './entry.vue';
 import DocsHeader from './components/header.vue';
@@ -17,7 +20,7 @@ import DocsSideNav from './components/side-nav.vue';
 import DocsDemoBlock from './components/demo-block.vue';
 
 import i18n from './i18n/index';
-FMUI.locale.setI18n(i18n);
+locale.setI18n(i18n);
 
 Vue.use(FMUI);
 Vue.use(VueRouter);

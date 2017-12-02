@@ -117,7 +117,7 @@ module.exports = {
         extensions: ['.vue', '.js', '.md'],
         modules: [path.join(__dirname, '../node_modules')],
         alias: {
-            '@docs': path.resolve(__dirname, '../docs'),
+            'fm-vue-ui': path.resolve(__dirname, '../'),
             'main': path.resolve(__dirname, '../src'),
             'vue$': 'vue/dist/vue.esm.js'
         }

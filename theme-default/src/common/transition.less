@@ -1,0 +1,17 @@
+// 通用的 trasition
+.fm-common-enter {
+    opacity: 0;
+}
+
+.fm-common-enter-active {
+    transition: all .5s ease;
+}
+
+.fm-common-leave {
+    opacity: 1;
+}
+
+.fm-common-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    opacity: 0;
+}

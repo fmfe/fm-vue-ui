@@ -6,6 +6,11 @@
             "path": "/index"
         },
         {
+            "name": "log",
+            "title": "更新日志",
+            "path": "/changelog"
+        },
+        {
             "name": "i18n",
             "title": "国际化",
             "path": "/i18n"
