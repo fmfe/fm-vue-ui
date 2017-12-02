@@ -12,6 +12,8 @@ function loadPages (name) {
     return resolve => import(`./pages/${name}.md`).then(component => resolve(component || component.default));
 };
 
+import ChangeLog from './pages/change-log.vue';
+
 function regiterRoute (navConfig) {
     const navs = navConfig[LANG];
 
@@ -24,6 +26,12 @@ function regiterRoute (navConfig) {
                         name: child.name,
                         component: loadMD(child.name)
                     });
+                });
+            } else if (nav.path === '/changelog') {
+                routes.push({
+                    path: nav.path,
+                    name: nav.name,
+                    component: ChangeLog
                 });
             } else {
                 routes.push({
