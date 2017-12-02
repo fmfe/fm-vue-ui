@@ -10,6 +10,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import FMUI from 'main/index';
+import 'fm-vue-ui/theme-default/src/index.less';
+
 import routes from './routes.config';
 import entry from './entry.vue';
 import DocsHeader from './components/header.vue';
