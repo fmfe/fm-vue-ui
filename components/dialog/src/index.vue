@@ -25,8 +25,6 @@
 </template>
 
 <script>
-    import locale from 'main/locale/i18n';
-
     export default {
         name: 'fm-dialog',
         props: {
@@ -72,7 +70,7 @@
         data () {
             return {
                 shown: false,
-                vuei18n: locale.getI18n()
+                vuei18n: window.__vueI18n
             };
         },
 
