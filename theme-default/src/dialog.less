@@ -1,6 +1,6 @@
 .model-dialog-wrap {
     position: fixed;
-    z-index: 100002;
+    z-index: @z-index-popper;
     top: 0;
     left: 0;
     right: 0;
@@ -31,7 +31,7 @@
         content: '';
         width: 2px;
         height: 10px;
-        background: #9c9c9d;
+        background: @background-color-light-3;
     }
     &::before {
         transform: rotate(-45deg);
@@ -41,7 +41,7 @@
     }
     &:hover {
         &::before, &:after {
-            background: #ff6200;
+            background: @background-color-light-1;
         }
     }
 }
@@ -52,23 +52,25 @@
     left: 50%;
     width: 300px;
     height: auto;
-    background: #fff;
+    background: @background-color-white;
     transform: translate(-150px, -50%);
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 3px 3px;
-    border-top: 2px solid #ff8030;
+    border-top: @border-width-normal solid @border-regular-color-2;
     .dialog-top {
         width: 300px;
         height: 50px;
         line-height: 50px;
-        background: #f5f6fa;
+        background: @background-color-light-2;
         h1 {
-            font-size: 15px;
+            font-size: @mid-font-size;
+            font-weight: @font-weight-mid;
+            color: @color-regular-1;
             margin: 0 0 0 20px;
         }
     }
     .dialog-middle {
-        font-weight: 400;
+        font-weight: @font-weight-normal;
         width: 260px;
         margin: 20px;
         text-align: center;
@@ -79,7 +81,7 @@
             width: 30px;
             border-radius: 50%;
             &.dialog-success-icon {
-                border: 2px solid #22ac75;
+                border: @border-width-normal solid #22ac75;
                 &::before {
                     position: absolute;
                     top: 6px;
@@ -87,14 +89,14 @@
                     content: "";
                     width: 13px;
                     height: 6px;
-                    border: 2px solid #22ac75;
+                    border: @border-width-normal solid #22ac75;
                     border-top: none;
                     border-right: none;
                     transform: rotate(-45deg);
                 }
             }
             &.dialog-failure-icon {
-                border: 2px solid #fc464a;
+                border: @border-width-normal solid #fc464a;
                 &:before {
                     position: absolute;
                     bottom: 10px;
@@ -104,7 +106,7 @@
                     height: 12px;
                     width: 3px;
                     background: #fc464a;
-                    border-radius: 2px;
+                    border-radius: @border-radius-normal;
                 }
                 &:after {
                     position: absolute;
@@ -115,13 +117,13 @@
                     height: 3px;
                     width: 3px;
                     background: #fc464a;
-                    border-radius: 1px;
+                    border-radius: @border-radius-base;
                 }
             }
         }
         span {
             display: block;
-            font-size: 16px;
+            font-size: @mid-font-size;
             line-height: 22px;
         }
     }
@@ -135,22 +137,22 @@
             height: 30px;
             line-height: 30px;
             text-align: center;
-            font-size: 15px;
-            border-radius: 2px;
+            font-size: @mid-font-size;
+            border-radius: @border-radius-normal;
             &.confirm {
-                background: #ff6200;
-                color: #fff;
+                background: @background-color-light-1;
+                color: @color-white;
                 &:hover {
                     opacity: 0.8;
                 }
             }
             &.cancel {
-                border: 1px solid #e1e2e6;
-                color: #333;
+                border: 1px solid @border-regular-color;
+                color: @color-regular-1;
                 margin-left: 10px;
                 &:hover {
-                    border: 1px solid #ff6200;
-                    color: #ff6200;
+                    border: 1px solid @background-color-light-1;
+                    color: @color-primary;
                 }
             }
         }
