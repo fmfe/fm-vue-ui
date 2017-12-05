@@ -31,6 +31,7 @@
         no-constant-condition: 0,
         no-undef: 0,
         handle-callback-err: 0,
-        no-trailing-spaces: 0
+        no-trailing-spaces: 0,
+        no-unneeded-ternary: 0
     }
 }
