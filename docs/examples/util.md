@@ -5,6 +5,10 @@
             return this.$utils.avatarError(e);
         },
 
+        avatarError2 (e) {
+            return this.$utils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
+        },
+
         getCurDate () {
             return new Date("2017-12-05T04:26:07.584Z");
         },
@@ -40,7 +44,7 @@ new Vue({
 ```js
 export default {
     formatDateToStr,  // 时间格式化
-    avatarError,  // 设置默认头像
+    avatarError,  // 设置图像加载失败时的默认图像
     // 下面三个是对 Storage 的封装, 均提供 set/get/remove/clear/getAll 五个 api
     localStorage,  // ==> window.localStorage
     sessionStorage, // ==> window.sessionStorage
@@ -48,17 +52,22 @@ export default {
 };
 ```
 
-### 默认头像
-:::demo 用于头像加载失败时显示统一的默认头像。默认头像是 Base64 格式的。
+### 默认图像
+:::demo 用于图像加载失败时显示统一的默认图像。默认图像是 Base64 格式的。也可以指定一个 url。
 
 ```html
 <img src="xxx.png" @error="avatarError"></img>
+<img src="xxx.png" @error="avatarError2"></img>
 
 <script>
   export default {
     methods: {
-        avatarError(flag) {
+        avatarError() {
             return this.$utils.avatarError(e);
+        },
+
+        avatarError2 () {
+            return this.$utils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
         }
     }
   };
