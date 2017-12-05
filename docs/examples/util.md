@@ -106,4 +106,4 @@ this.$utils.localStorage.remove('name2'); // 清除指定的 key
 this.$utils.localStorage.clear(); // 清除所有 key
 ```
 
-**需要注意的是 `memoryStorage` 是存与内存中的一个对象，可用于临时存储应用数据，但不可用于持久化数据。**
+**需要注意的是 `memoryStorage` 只是内存中的一个对象，可用于临时存储应用数据，但不可用于持久化数据。**
