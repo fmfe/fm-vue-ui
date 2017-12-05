@@ -3,10 +3,14 @@
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
 import Loading from '../components/loading/index.js';
+import Collapse from '../components/collapse/index.js';
+import CollapseItem from '../components/collapse-item/index.js';
 
 const components = [
     Button,
-    Loading
+    Loading,
+    Collapse,
+    CollapseItem
 ];
 
 const install = function (Vue, opts = {}) {
@@ -26,7 +30,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
     Button,
     Dialog,
-    Loading
+    Loading,
+    Collapse,
+    CollapseItem
 };
 
 export default {
@@ -34,6 +40,8 @@ export default {
     install,
     Button,
     Dialog,
-    Loading
+    Loading,
+    Collapse,
+    CollapseItem
 };
 
