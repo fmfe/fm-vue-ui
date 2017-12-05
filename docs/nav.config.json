@@ -23,6 +23,11 @@
             "title": "基础组件",
             "children": [
                 {
+                    "title": "Utils 工具库",
+                    "name": "util",
+                    "path": "/utils"
+                },
+                {
                     "title": "Button 按钮",
                     "name": "button",
                     "path": "/button"

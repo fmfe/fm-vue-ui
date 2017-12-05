@@ -11,9 +11,11 @@ const avatarError = (e) => {
 
 // 格式化时间
 const formatDateToStr = (date, formatStr) => {
+    console.log('ffffff111', formatStr);
     formatStr = formatStr || 'yyyy-MM-dd';
     date = date || new Date();
     let str = formatStr;
+    console.log('ffffff', formatStr);
     str = str.replace(/yyyy|YYYY/, date.getFullYear());
     str = str.replace(/yy|YY/, (date.getYear() % 100) > 9 ? (date.getYear() % 100).toString() : '0' + (date.getYear() % 100));
     str = str.replace(/MM/, addZero(date.getMonth() + 1));
@@ -29,7 +31,7 @@ const formatDateToStr = (date, formatStr) => {
     return str;
 };
 
-export {
+export default {
     formatDateToStr,
     avatarError,
     localStorage,
