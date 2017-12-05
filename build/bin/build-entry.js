@@ -63,9 +63,7 @@ ComponentNames.forEach(name => {
         }));
     }
 
-    if (componentName !== 'Loading') {
-        listTemplate.push(`    ${componentName}`);
-    };
+    listTemplate.push(`    ${componentName}`);
 });
 
 const template = render(MAIN_TEMPLATE, {
