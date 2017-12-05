@@ -2,9 +2,11 @@
 
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
+import Loading from '../components/loading/index.js';
 
 const components = [
-    Button
+    Button,
+    Loading
 ];
 
 const install = function (Vue, opts = {}) {
@@ -23,13 +25,15 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
     Button,
-    Dialog
+    Dialog,
+    Loading
 };
 
 export default {
     version: '0.1.0',
     install,
     Button,
-    Dialog
+    Dialog,
+    Loading
 };
 
