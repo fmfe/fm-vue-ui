@@ -1,6 +1,8 @@
 {
     "button": "./components/button/index.js",
     "dialog": "./components/dialog/index.js",
-    "loading": "./components/loading/index.js"  
+    "loading": "./components/loading/index.js",
+    "collapse": "./components/collapse/index.js",
+    "collapse-item": "./components/collapse-item/index.js"   
 }
   
