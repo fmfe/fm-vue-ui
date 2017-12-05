@@ -25,6 +25,18 @@ export const localStorage = {
 
     clear () {
         l.clear();
+    },
+
+    getAll () {
+        const res = {};
+        for (let i = l.length - 1; i >= 0; i--) {
+            let key = l.key(i);
+            if (key.startsWith(prefix)) {
+                key = key.slice(prefix.length);
+                res[key] = localStorage.get(key);
+            }
+        }
+        return res;
     }
 };
 
@@ -52,5 +64,40 @@ export const sessionStorage = {
 
     clear () {
         s.clear();
+    },
+
+    getAll () {
+        const res = {};
+        for (let i = s.length - 1; i >= 0; i--) {
+            let key = s.key(i);
+            if (key.startsWith(prefix)) {
+                key = key.slice(prefix.length);
+                res[key] = sessionStorage.get(key);
+            }
+        }
+        return res;
+    }
+};
+
+let _memoryStorage = {};
+export const memoryStorage = {
+    set (key, val) {
+        _memoryStorage[prefix + key] = val;
+    },
+
+    get (key) {
+        return _memoryStorage[prefix + key];
+    },
+
+    remove (key) {
+        delete _memoryStorage[prefix + key];
+    },
+
+    clear () {
+        _memoryStorage = {};
+    },
+
+    getAll () {
+        return _memoryStorage;
     }
 };

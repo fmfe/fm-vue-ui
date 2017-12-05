@@ -1,7 +1,7 @@
 /**
  * 通用的工具库
  */
-import { localStorage, sessionStorage } from './storage';
+import { localStorage, sessionStorage, memoryStorage } from './storage';
 import { addZero } from './helpers';
 
 // 用户头像默认加载失败的图片
@@ -33,5 +33,6 @@ export {
     formatDateToStr,
     avatarError,
     localStorage,
-    sessionStorage
+    sessionStorage,
+    memoryStorage
 };
