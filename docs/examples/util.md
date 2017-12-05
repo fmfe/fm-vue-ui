@@ -98,12 +98,12 @@ export default {
 
 ```js
 // 写入的 key 均会有私有前缀 _fm_
-localStorage.set('name', 'test');  // 写
-localStorage.get('name'); // 读 => 'test'
-localStorage.set('name2', 'test2'); 
-localStorage.getAll(); // 读取所有 => {name: 'test', name2: 'test2'}
-localStorage.remove('name2'); // 清除指定的 key
-localStorage.clear(); // 清除所有 key
+this.$utils.localStorage.set('name', 'test');  // 写
+this.$utils.localStorage.get('name'); // 读 => 'test'
+this.$utils.localStorage.set('name2', 'test2'); 
+this.$utils.localStorage.getAll(); // 读取所有 => {name: 'test', name2: 'test2'}
+this.$utils.localStorage.remove('name2'); // 清除指定的 key
+this.$utils.localStorage.clear(); // 清除所有 key
 ```
 
 **需要注意的是 `memoryStorage` 是存与内存中的一个对象，可用于临时存储应用数据，但不可用于持久化数据。**
