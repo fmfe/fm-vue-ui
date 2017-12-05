@@ -39,6 +39,9 @@
     "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less",
     "test": "npx karma start test/karma.conf.js --single-run"
   },
+  "dependencies": {
+    "tiny-dom-helpers": "^1.2.4"
+  },
   "peerDependencies": {
     "vue": ">= 2.5.0"
   },
