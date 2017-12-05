@@ -36,6 +36,11 @@
                     "title": "Dialog 对话框",
                     "name": "dialog",
                     "path": "/dialog"
+                },
+                {
+                    "title": "Loading 加载",
+                    "name": "loading",
+                    "path": "/loading"
                 }
             ]
         }
