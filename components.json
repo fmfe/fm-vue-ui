@@ -1,6 +1,6 @@
 {
     "button": "./components/button/index.js",
     "dialog": "./components/dialog/index.js",
-    "loading": "./components/loading/index.js"    
+    "loading": "./components/loading/index.js"  
 }
   
