@@ -3,6 +3,8 @@
     "dialog": "./components/dialog/index.js",
     "loading": "./components/loading/index.js",
     "collapse": "./components/collapse/index.js",
-    "collapse-item": "./components/collapse-item/index.js"   
+    "collapse-item": "./components/collapse-item/index.js",
+    "tabs": "./components/tabs/index.js",   
+    "tab-panel": "./components/tab-panel/index.js" 
 }
   
