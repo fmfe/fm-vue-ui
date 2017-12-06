@@ -5,12 +5,16 @@ import Dialog from '../components/dialog/index.js';
 import Loading from '../components/loading/index.js';
 import Collapse from '../components/collapse/index.js';
 import CollapseItem from '../components/collapse-item/index.js';
+import Tabs from '../components/tabs/index.js';
+import TabPanel from '../components/tab-panel/index.js';
 
 const components = [
     Button,
     Loading,
     Collapse,
-    CollapseItem
+    CollapseItem,
+    Tabs,
+    TabPanel
 ];
 
 const install = function (Vue, opts = {}) {
@@ -32,7 +36,9 @@ export {
     Dialog,
     Loading,
     Collapse,
-    CollapseItem
+    CollapseItem,
+    Tabs,
+    TabPanel
 };
 
 export default {
@@ -42,6 +48,8 @@ export default {
     Dialog,
     Loading,
     Collapse,
-    CollapseItem
+    CollapseItem,
+    Tabs,
+    TabPanel
 };
 
