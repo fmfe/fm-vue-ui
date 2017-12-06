@@ -3,6 +3,14 @@
         <div class="heading">更新日志</div>
         <ul class="timeline">
             <li>
+                <h3>0.2.0</h3>
+                <em>2017/12/06</em>
+                <ul>
+                    <li>添加公共库工具</li>
+                    <li>添加 Loading/Collapse/Tabs 组件</li>
+                </ul>
+            </li>
+            <li>
                 <h3>0.1.0</h3>
                 <em>2017/12/02</em>
                 <ul>
