@@ -46,6 +46,11 @@
                     "title": "Collapse 折叠面板",
                     "name": "collapse",
                     "path": "/collapse"
+                },
+                {
+                    "title": "Tabs 标签页",
+                    "name": "tabs",
+                    "path": "/tabs"
                 }
             ]
         }
