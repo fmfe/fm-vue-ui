@@ -1,6 +1,6 @@
 <template>
     <transition name="fm-common">
-        <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop" :style="{zIndex: 100002}">
+        <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop">
             <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="model-dialog">
                 <div class="dialog-top" v-if="!validType">

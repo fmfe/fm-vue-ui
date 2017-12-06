@@ -23,6 +23,11 @@
             "title": "基础组件",
             "children": [
                 {
+                    "title": "Utils 工具库",
+                    "name": "util",
+                    "path": "/utils"
+                },
+                {
                     "title": "Button 按钮",
                     "name": "button",
                     "path": "/button"
@@ -31,6 +36,21 @@
                     "title": "Dialog 对话框",
                     "name": "dialog",
                     "path": "/dialog"
+                },
+                {
+                    "title": "Loading 加载",
+                    "name": "loading",
+                    "path": "/loading"
+                },
+                {
+                    "title": "Collapse 折叠面板",
+                    "name": "collapse",
+                    "path": "/collapse"
+                },
+                {
+                    "title": "Tabs 标签页",
+                    "name": "tabs",
+                    "path": "/tabs"
                 }
             ]
         }

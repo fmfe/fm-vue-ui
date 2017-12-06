@@ -1,0 +1,20 @@
+@import "./common/var.less";
+
+.fm-loading-wrap {
+    position: absolute;
+    z-index: @z-index-normal;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: @background-color-white;
+    text-align: center;
+    .fm-loading-text {
+        font-weight: @font-weight-normal;
+        color: @color-regular-2;
+        font-size: @normal-font-size
+    }
+    & > img {
+        vertical-align: middle;
+        padding: 5px;
+    }
+}

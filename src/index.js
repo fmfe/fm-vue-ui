@@ -2,9 +2,19 @@
 
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
+import Loading from '../components/loading/index.js';
+import Collapse from '../components/collapse/index.js';
+import CollapseItem from '../components/collapse-item/index.js';
+import Tabs from '../components/tabs/index.js';
+import TabPanel from '../components/tab-panel/index.js';
 
 const components = [
-    Button
+    Button,
+    Loading,
+    Collapse,
+    CollapseItem,
+    Tabs,
+    TabPanel
 ];
 
 const install = function (Vue, opts = {}) {
@@ -23,13 +33,23 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
     Button,
-    Dialog
+    Dialog,
+    Loading,
+    Collapse,
+    CollapseItem,
+    Tabs,
+    TabPanel
 };
 
 export default {
     version: '0.1.0',
     install,
     Button,
-    Dialog
+    Dialog,
+    Loading,
+    Collapse,
+    CollapseItem,
+    Tabs,
+    TabPanel
 };
 
