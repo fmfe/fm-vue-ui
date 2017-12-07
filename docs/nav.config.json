@@ -51,6 +51,11 @@
                     "title": "Tabs 标签页",
                     "name": "tabs",
                     "path": "/tabs"
+                },
+                {
+                    "title": "Rate 评分",
+                    "name": "rate",
+                    "path": "/rate"
                 }
             ]
         }

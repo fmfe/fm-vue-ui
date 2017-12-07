@@ -7,6 +7,7 @@ import Collapse from '../components/collapse/index.js';
 import CollapseItem from '../components/collapse-item/index.js';
 import Tabs from '../components/tabs/index.js';
 import TabPanel from '../components/tab-panel/index.js';
+import Rate from '../components/rate/index.js';
 
 const components = [
     Button,
@@ -14,7 +15,8 @@ const components = [
     Collapse,
     CollapseItem,
     Tabs,
-    TabPanel
+    TabPanel,
+    Rate
 ];
 
 const install = function (Vue, opts = {}) {
@@ -38,11 +40,12 @@ export {
     Collapse,
     CollapseItem,
     Tabs,
-    TabPanel
+    TabPanel,
+    Rate
 };
 
 export default {
-    version: '0.1.0',
+    version: '0.2.0',
     install,
     Button,
     Dialog,
@@ -50,6 +53,7 @@ export default {
     Collapse,
     CollapseItem,
     Tabs,
-    TabPanel
+    TabPanel,
+    Rate
 };
 
