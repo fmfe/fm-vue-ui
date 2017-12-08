@@ -56,6 +56,11 @@
                     "title": "Rate 评分",
                     "name": "rate",
                     "path": "/rate"
+                },
+                {
+                    "title": "Swiper 轮播",
+                    "name": "swiper",
+                    "path": "/swiper"
                 }
             ]
         }
