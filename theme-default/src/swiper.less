@@ -1,0 +1,36 @@
+.fm-swiper-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.fm-swiper-imgs {
+    display: inline-block;
+    width: 100%;
+    z-index: 1;
+    a {
+        display: block;
+    }
+}
+
+.fm-swiper-dot {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    li {
+        display: inline-block;
+        margin: 0 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: rgba(255, 255, 255, .5);
+        -webkit-transition: all .3s linear;
+        transition: all .3s linear;
+        &.actived {
+            width: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+}
