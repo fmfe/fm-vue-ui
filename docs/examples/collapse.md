@@ -1,4 +1,4 @@
-<style>
+<style lang="less">
     .collapse-content {
         padding: 20px;
         height: 150px;
