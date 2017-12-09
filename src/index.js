@@ -8,7 +8,7 @@ import CollapseItem from '../components/collapse-item/index.js';
 import Tabs from '../components/tabs/index.js';
 import TabPanel from '../components/tab-panel/index.js';
 import Rate from '../components/rate/index.js';
-import Swiper from '../components/swiper/index.js';
+import Carousel from '../components/carousel/index.js';
 
 const components = [
     Button,
@@ -18,7 +18,7 @@ const components = [
     Tabs,
     TabPanel,
     Rate,
-    Swiper
+    Carousel
 ];
 
 const install = function (Vue, opts = {}) {
@@ -44,7 +44,7 @@ export {
     Tabs,
     TabPanel,
     Rate,
-    Swiper
+    Carousel
 };
 
 export default {
@@ -58,6 +58,6 @@ export default {
     Tabs,
     TabPanel,
     Rate,
-    Swiper
+    Carousel
 };
 

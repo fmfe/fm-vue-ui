@@ -58,9 +58,9 @@
                     "path": "/rate"
                 },
                 {
-                    "title": "Swiper 轮播",
-                    "name": "swiper",
-                    "path": "/swiper"
+                    "title": "Carousel 走马灯",
+                    "name": "carousel",
+                    "path": "/carousel"
                 }
             ]
         }
