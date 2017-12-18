@@ -9,6 +9,7 @@ import Tabs from '../components/tabs/index.js';
 import TabPanel from '../components/tab-panel/index.js';
 import Rate from '../components/rate/index.js';
 import Carousel from '../components/carousel/index.js';
+import Input from '../components/input/index.js';
 
 const components = [
     Button,
@@ -18,7 +19,8 @@ const components = [
     Tabs,
     TabPanel,
     Rate,
-    Carousel
+    Carousel,
+    Input
 ];
 
 const install = function (Vue, opts = {}) {
@@ -44,7 +46,8 @@ export {
     Tabs,
     TabPanel,
     Rate,
-    Carousel
+    Carousel,
+    Input
 };
 
 export default {
@@ -58,6 +61,7 @@ export default {
     Tabs,
     TabPanel,
     Rate,
-    Carousel
+    Carousel,
+    Input
 };
 

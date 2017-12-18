@@ -7,6 +7,7 @@
     "tabs": "./components/tabs/index.js",   
     "tab-panel": "./components/tab-panel/index.js",
     "rate": "./components/rate/index.js",
-    "carousel": "./components/carousel/index.js"
+    "carousel": "./components/carousel/index.js",
+    "input": "./components/input/index.js"
 }
   
