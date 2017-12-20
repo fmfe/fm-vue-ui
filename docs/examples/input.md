@@ -117,5 +117,5 @@
 | :---------- | :-------------- | :---------- |
 | blur | 在 Input 失去焦点时触发 | (event: Event) |
 | focus | 在 Input 获得焦点时触发 | (event: Event) |
-| change | 在 Input 值改变时触发 | (value: string | number) |
+| change | 在 Input 值改变时触发 | (value: string \| number) |
 
