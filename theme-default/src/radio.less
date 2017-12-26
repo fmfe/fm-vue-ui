@@ -1,0 +1,116 @@
+@import "./common/var.less";
+
+.fm-radio {
+    position: relative;
+    display: inline-block;
+    color: @color-regular-1;
+    font-size: @normal-font-size;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    &.is-disabled {
+        cursor: not-allowed;
+        .fm-radio-label {
+            color: @color-regular
+        }
+    }
+}
+
+.fm-radio-input {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: @background-color-white;
+    line-height: 1;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+    &.fm-radio-small {
+        width: 16px;
+        height: 16px;
+    }
+    .fm-radio-inner {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        z-index: @z-index-normal;
+        border-radius: 50%;
+        border: @border-width-base solid @border-regular-color;
+        &::after {
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: translate(-50%,-50%) scale(0);
+            transition: transform .15s cubic-bezier(.71,-.46,.88,.6);
+        }
+    }
+    &.fm-radio-medium {
+        width: 20px;
+        height: 20px;
+        .fm-radio-inner::after {
+            width: 8px;
+            height: 8px;
+        }
+    }
+    &.fm-radio-large {
+        width: 24px;
+        height: 24px;
+        .fm-radio-inner::after {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &.is-disabled {
+        background: #eceff5;
+        cursor: not-allowed;
+        .fm-radio-inner {
+            border: @border-width-base solid #edeef2;
+        }
+    }
+    &.is-checked {
+        .fm-radio-inner {
+            background: @background-color-light-1;
+            border-color: @border-primary-color;
+            &::after {
+                transform: translate(-50%,-50%) scale(1);
+            }
+        }
+        &.is-disabled {
+            cursor: not-allowed;
+            .fm-radio-inner {
+                background: #eceff5;
+                border: @border-width-base solid #edeef2;
+                &::after {
+                    transform: translate(-50%,-50%) scale(1);
+                }
+            }
+        }
+    }
+}
+
+.fm-radio-original {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    margin: 0;
+    width: 0;
+    height: 0;
+    left: -999px;
+}
+
+.fm-radio-label {
+    display: inline-block;
+    padding-left: 5px;
+    line-height: 1;
+    font-size: @normal-font-size;
+}

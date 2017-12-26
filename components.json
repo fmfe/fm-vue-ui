@@ -9,6 +9,7 @@
     "rate": "./components/rate/index.js",
     "carousel": "./components/carousel/index.js",
     "input": "./components/input/index.js",
-    "checkbox": "./components/checkbox/index.js"
+    "checkbox": "./components/checkbox/index.js",
+    "radio": "./components/radio/index.js"
 }
   

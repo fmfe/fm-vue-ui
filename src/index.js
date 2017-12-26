@@ -11,6 +11,7 @@ import Rate from '../components/rate/index.js';
 import Carousel from '../components/carousel/index.js';
 import Input from '../components/input/index.js';
 import Checkbox from '../components/checkbox/index.js';
+import Radio from '../components/radio/index.js';
 
 const components = [
     Button,
@@ -22,7 +23,8 @@ const components = [
     Rate,
     Carousel,
     Input,
-    Checkbox
+    Checkbox,
+    Radio
 ];
 
 const install = function (Vue, opts = {}) {
@@ -50,7 +52,8 @@ export {
     Rate,
     Carousel,
     Input,
-    Checkbox
+    Checkbox,
+    Radio
 };
 
 export default {
@@ -66,6 +69,7 @@ export default {
     Rate,
     Carousel,
     Input,
-    Checkbox
+    Checkbox,
+    Radio
 };
 
