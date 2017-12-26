@@ -10,6 +10,7 @@
     "carousel": "./components/carousel/index.js",
     "input": "./components/input/index.js",
     "checkbox": "./components/checkbox/index.js",
-    "radio": "./components/radio/index.js"
+    "radio": "./components/radio/index.js",
+    "switch": "./components/switch/index.js"
 }
   
