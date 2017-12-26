@@ -1,7 +1,7 @@
 <template>
     <transition name="fm-common">
         <div class="fm-loading-wrap" v-if="shown">
-            <img src="//cdn.followme.com/cdn/images/newloading.gif" alt="loading...">
+            <img src="//cdn.followme.com/images/newloading.gif" alt="loading...">
             <div class="fm-loading-text">
                 <slot></slot>
             </div>
