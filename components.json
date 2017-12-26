@@ -8,6 +8,7 @@
     "tab-panel": "./components/tab-panel/index.js",
     "rate": "./components/rate/index.js",
     "carousel": "./components/carousel/index.js",
-    "input": "./components/input/index.js"
+    "input": "./components/input/index.js",
+    "checkbox": "./components/checkbox/index.js"
 }
   

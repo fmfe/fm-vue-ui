@@ -10,6 +10,7 @@ import TabPanel from '../components/tab-panel/index.js';
 import Rate from '../components/rate/index.js';
 import Carousel from '../components/carousel/index.js';
 import Input from '../components/input/index.js';
+import Checkbox from '../components/checkbox/index.js';
 
 const components = [
     Button,
@@ -20,7 +21,8 @@ const components = [
     TabPanel,
     Rate,
     Carousel,
-    Input
+    Input,
+    Checkbox
 ];
 
 const install = function (Vue, opts = {}) {
@@ -47,7 +49,8 @@ export {
     TabPanel,
     Rate,
     Carousel,
-    Input
+    Input,
+    Checkbox
 };
 
 export default {
@@ -62,6 +65,7 @@ export default {
     TabPanel,
     Rate,
     Carousel,
-    Input
+    Input,
+    Checkbox
 };
 
