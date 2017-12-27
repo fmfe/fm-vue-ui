@@ -3,5 +3,11 @@
         "title": "Confirm",
         "confirmText": "Comfirm",
         "cancelText": "Cancel"
+    },
+    "select": {
+        "placeholder": "Please select"
+    },
+    "input": {
+        "placeholder": "Please input"
     }
 }
