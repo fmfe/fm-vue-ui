@@ -40,7 +40,7 @@
 
 <style lang="less">
     .docs-side-nav {
-        position: fixed;
+        position: absolute;
         width: 175px;
         height: auto;
         padding: 15px;
