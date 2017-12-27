@@ -1,6 +1,6 @@
 <template>
     <div class="fm-select" :class="{'is-disabled': disabled}">
-        <span ref="trigger" class="fm-selected-trigger" @click.stop="handleClick">{{selected ? selected : _placeholder}}</span>
+        <span ref="trigger" class="fm-selected-trigger" @click="handleTriggerClick">{{selected ? selected : _placeholder}}</span>
         <i :class="['fm-select-icon', { 'active': shown }]"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
             <div class="fm-selectable-list-wrap" v-show="shown" :style="listWrapStyle">
@@ -52,15 +52,32 @@
         },
 
         methods: {
-            handleClick () {
+            contains (root, target) {
+                // root 节点是否包含 target 节点
+                const isElement = Object.prototype.toString.call(root).includes('Element') && Object.prototype.toString.call(target).includes('Element');
+                if (!isElement) {
+                    return false;
+                }
+                let node = target;
+                while (node) {
+                    if (node === root) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            },
+
+            handleTriggerClick () {
                 if (this.disabled) {
                     return;
                 }
                 this.shown = !this.shown;
             },
 
-            handleDocClick () {
-                if (this.shown) {
+            handleDocClick (e) {
+                const target = e.target;
+                if (!this.contains(this.$el, target) && this.shown) {
                     this.shown = false;
                 }
             },
