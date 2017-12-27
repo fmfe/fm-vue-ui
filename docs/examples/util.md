@@ -2,11 +2,11 @@
   export default {
     methods: {
         avatarError(e) {
-            return this.$utils.avatarError(e);
+            return this.$fmutils.avatarError(e);
         },
 
         avatarError2 (e) {
-            return this.$utils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
+            return this.$fmutils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
         },
 
         getCurDate () {
@@ -14,7 +14,7 @@
         },
 
         formatDate (formatStr = '') {
-            return this.$utils.formatDateToStr(new Date("2017-12-05T04:26:07.584Z"), formatStr);
+            return this.$fmutils.formatDateToStr(new Date("2017-12-05T04:26:07.584Z"), formatStr);
         }
     }
   }
@@ -28,10 +28,11 @@
 
 ```html
 import Vue from 'vue'
-import fmutils from fm-vue-ui/lib/utils/index';
 import App from './App.vue'
 
-Vue.prototype.$utils = fmutils;
+// 按需引入时需要手动引入 utils，全量引入会挂载在 $fmutils
+import fmutils from fm-vue-ui/lib/utils/index';
+Vue.prototype.$fmutils = fmutils;
 
 new Vue({
   el: '#app',
@@ -63,11 +64,11 @@ export default {
   export default {
     methods: {
         avatarError() {
-            return this.$utils.avatarError(e);
+            return this.$fmutils.avatarError(e);
         },
 
         avatarError2 () {
-            return this.$utils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
+            return this.$fmutils.avatarError(e, '//www.followme.com/portalindex/assets/logo.png');
         }
     }
   };
@@ -93,7 +94,7 @@ export default {
         },
 
         formatDate (formatStr = '') {
-            return this.$utils.formatDateToStr(new Date("2017-12-05T04:26:44.584Z"), formatStr);
+            return this.$fmutils.formatDateToStr(new Date("2017-12-05T04:26:44.584Z"), formatStr);
         }
     }
   };
@@ -107,12 +108,12 @@ export default {
 
 ```js
 // 写入的 key 均会有私有前缀 _fm_
-this.$utils.localStorage.set('name', 'test');  // 写
-this.$utils.localStorage.get('name'); // 读 => 'test'
-this.$utils.localStorage.set('name2', 'test2'); 
-this.$utils.localStorage.getAll(); // 读取所有 => {name: 'test', name2: 'test2'}
-this.$utils.localStorage.remove('name2'); // 清除指定的 key
-this.$utils.localStorage.clear(); // 清除所有 key
+this.$fmutils.localStorage.set('name', 'test');  // 写
+this.$fmutils.localStorage.get('name'); // 读 => 'test'
+this.$fmutils.localStorage.set('name2', 'test2'); 
+this.$fmutils.localStorage.getAll(); // 读取所有 => {name: 'test', name2: 'test2'}
+this.$fmutils.localStorage.remove('name2'); // 清除指定的 key
+this.$fmutils.localStorage.clear(); // 清除所有 key
 ```
 
 **需要注意的是 `memoryStorage` 只是内存中的一个对象，可用于临时存储应用数据，但不可用于持久化数据。**

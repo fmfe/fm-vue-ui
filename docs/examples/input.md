@@ -103,7 +103,7 @@
 | value | 绑定值 | string/number | - | - |
 | size | 输入框尺寸 | string | large/medium/small/mini | medium |
 | disabled | 是否禁用 | boolean | — | false |
-| placeholder | 输入框占位文本	 | string | — | - |
+| placeholder | 输入框占位文本	 | string | — | 请输入/Please input |
 | clearable | 是否可清空	 | boolean | — | false |
 
 ### Slots
