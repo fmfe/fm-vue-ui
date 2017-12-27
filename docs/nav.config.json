@@ -81,6 +81,11 @@
                     "title": "Switch 开关",
                     "name": "switch",
                     "path": "/switch"
+                },
+                {
+                    "title": "Select 选择器",
+                    "name": "select",
+                    "path": "/select"
                 }
             ]
         }
