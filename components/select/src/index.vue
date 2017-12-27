@@ -1,6 +1,6 @@
 <template>
     <div class="fm-select" :class="{'is-disabled': disabled}">
-        <span ref="trigger" class="fm-selected-trigger" @click.stop="handleClick">{{selfModel ? selfModel : _placeholder}}</span>
+        <span ref="trigger" class="fm-selected-trigger" @click.stop="handleClick">{{selected ? selected : _placeholder}}</span>
         <i :class="['fm-select-icon', { 'active': shown }]"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
             <div class="fm-selectable-list-wrap" v-show="shown" :style="listWrapStyle">
@@ -38,7 +38,7 @@
             return {
                 shown: false,
                 options: [],
-                selfModel: '',
+                selected: '',
                 listWrapStyle: {
 
                 }
@@ -48,16 +48,6 @@
         computed: {
             _placeholder () {
                 return this.placeholder ? this.placeholder : window.__vueI18n.t('select.placeholder');
-            },
-
-            selected: {
-                get () {
-                    this.selfModel = this.value || '';
-                },
-
-                set (val) {
-                    this.selfModel = val;
-                }
             }
         },
 
@@ -104,6 +94,12 @@
 
             handleListEnter () {
                 this.$nextTick(() => this.scrollToSelectedOption());
+            }
+        },
+
+        created () {
+            if (this.value) {
+                this.selected = this.value;
             }
         },
 

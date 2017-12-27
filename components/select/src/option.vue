@@ -39,7 +39,7 @@
             },
 
             curSelected () {
-                return this.select.selfModel;
+                return this.select.selected;
             }
         },
 
