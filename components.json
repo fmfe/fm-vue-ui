@@ -11,6 +11,8 @@
     "input": "./components/input/index.js",
     "checkbox": "./components/checkbox/index.js",
     "radio": "./components/radio/index.js",
-    "switch": "./components/switch/index.js"
+    "switch": "./components/switch/index.js",
+    "option": "./components/option/index.js",
+    "select": "./components/select/index.js"
 }
   
