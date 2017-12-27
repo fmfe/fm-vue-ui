@@ -22,7 +22,7 @@
                 size ? 'fm-inner-input-' + size : 'fm-inner-input-medium',
             ]"
             :value="currentValue"
-            :placeholder="placeholder"
+            :placeholder="_placeholder"
             :disabled="disabled"
             ref="input"
             @input="handleInput"
@@ -49,7 +49,7 @@
             },
             placeholder: {
                 type: String,
-                default: '请输入内容'
+                default: ''
             },
             disabled: {
                 type: Boolean,
@@ -82,6 +82,10 @@
 
             isGroup () {
                 return this.$slots.prepend || this.$slots.append;
+            },
+
+            _placeholder () {
+                return this.placeholder ? this.placeholder : window.__vueI18n.t('input.placeholder');
             }
         },
 
