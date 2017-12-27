@@ -3,5 +3,11 @@
         "title": "请确认",
         "confirmText": "确认",
         "cancelText": "取消"
+    },
+    "select": {
+        "placeholder": "请选择"
+    },
+    "input": {
+        "placeholder": "请输入"
     }
 }

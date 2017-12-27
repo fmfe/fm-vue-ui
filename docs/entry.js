@@ -11,7 +11,7 @@ import VueRouter from 'vue-router';
 
 import FMUI from 'main/index';
 import locale from 'main/locale/i18n';
-import fmutils from 'main/utils/index';
+// import fmutils from 'main/utils/index';
 import 'fm-vue-ui/theme-default/src/index.less';
 
 import routes from './routes.config';
@@ -22,7 +22,7 @@ import DocsDemoBlock from './components/demo-block.vue';
 
 import i18n from './i18n/index';
 locale.setI18n(i18n);
-Vue.prototype.$utils = fmutils;
+// Vue.prototype.$utils = fmutils;
 
 Vue.use(FMUI);
 Vue.use(VueRouter);

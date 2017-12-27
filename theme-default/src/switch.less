@@ -1,0 +1,46 @@
+@import "./common/var.less";
+
+.fm-switch {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    font-size: @normal-font-size;
+    line-height: 22px;
+    height: 22px;
+    min-width: 46px;
+    vertical-align: middle;
+    cursor: pointer;
+    .fm-switch-input {
+        display: none
+    }
+}
+
+.fm-switch-label {
+    position: absolute;
+    z-index: @z-index-normal;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+    background: @background-color-disabled;
+    transition: background .3s;
+    &.is-checked {
+        background: @background-color-primary;
+    }
+    &.is-disabled {
+        cursor: not-allowed;
+    }
+}
+
+.fm-switch-btn {
+    position: absolute;
+    z-index: @z-index-regular;
+    top: 50%;
+    margin-top: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: @background-color-white;
+    transition: left .3s;
+}

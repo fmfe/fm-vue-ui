@@ -3,6 +3,14 @@
         <div class="heading">更新日志</div>
         <ul class="timeline">
             <li>
+                <h3>1.0.0</h3>
+                <em>2017/12/27</em>
+                <ul>
+                    <li>添加 Select/Switch/Input/Checkbox/Radio 等基本表单组件</li>
+                    <li>添加 Rate/Carousel 等组件</li>
+                </ul>
+            </li>
+            <li>
                 <h3>0.2.0</h3>
                 <em>2017/12/06</em>
                 <ul>

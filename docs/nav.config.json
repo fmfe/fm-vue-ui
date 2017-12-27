@@ -51,6 +51,41 @@
                     "title": "Tabs 标签页",
                     "name": "tabs",
                     "path": "/tabs"
+                },
+                {
+                    "title": "Rate 评分",
+                    "name": "rate",
+                    "path": "/rate"
+                },
+                {
+                    "title": "Carousel 走马灯",
+                    "name": "carousel",
+                    "path": "/carousel"
+                },
+                {
+                    "title": "Input 输入框",
+                    "name": "input",
+                    "path": "/input"
+                },
+                {
+                    "title": "Checkbox 多选框",
+                    "name": "checkbox",
+                    "path": "/checkbox"
+                },
+                {
+                    "title": "Radio 单选框",
+                    "name": "radio",
+                    "path": "/radio"
+                },
+                {
+                    "title": "Switch 开关",
+                    "name": "switch",
+                    "path": "/switch"
+                },
+                {
+                    "title": "Select 选择器",
+                    "name": "select",
+                    "path": "/select"
                 }
             ]
         }

@@ -87,6 +87,11 @@ new Vue({
 ## 贡献指南
 
 1. 可以在 [fm-vue-ui](https://github.com/fmfe/fm-vue-ui/issues) 以 issue 的形式说明你的需求
-2. 可以在 [fm-vue-ui](https://github.com/fmfe/fm-vue-ui) 上新建自己的组件或功能分支，提交代码，补充相关文档和测试用例，通知主负责人 进行 review，然后合并到 `master` 或者 `dev`。合并之后，将删除新建的分支
+2. fork [fm-vue-ui](https://github.com/fmfe/fm-vue-ui), 然后开发自己的组件，写好对应的文档说明和单测，提交 PR
 3. 代码规范请参考 [coding style](https://github.com/fmfe/fe-coding-style-guide/)
 4. 对于组件中涉及的图标，请优先使用 CSS 来实现; 如果实现不了, 请将对应的图片资源放在 CDN 上
+## 开发步骤
+
+1. 在 `components.json` 文件中添加对应组件的映射(组件名和组件路径)
+2. 在 `components` 目录下按格式建立自己的组件目录，对应的样式在 `theme-default/src` 目录下，文件名和映射的组件名保持一致
+3. 执行 `npm run com` 
