@@ -38,7 +38,8 @@
     "fix": "npm run fix:vue & npm run fix:style",
     "fix:vue": "npx eslint --ext .vue,.js --fix src/**/*.js components/**/*.vue",
     "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less",
-    "test": "npx karma start test/karma.conf.js --single-run"
+    "test": "npx karma start test/karma.conf.js --single-run",
+    "commitmsg": "npx commitlint -e"
   },
   "dependencies": {
     "tiny-dom-helpers": "^1.2.4"
@@ -47,6 +48,8 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^6.0.2",
+    "@commitlint/config-angular": "^6.0.2",
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -62,6 +65,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.8.0",
     "eslint-config-vue": "^2.0.2",
     "eslint-plugin-vue": "^2.1.0",
@@ -122,5 +126,10 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 5.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
