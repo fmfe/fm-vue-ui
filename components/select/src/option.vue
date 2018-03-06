@@ -16,7 +16,7 @@
         inject: ['select'],
         props: {
             value: {
-                type: [String, Number],
+                type: [String, Number, Boolean],
                 required: true
             },
             label: [String, Number]
@@ -31,15 +31,15 @@
 
         computed: {
             curLabel () {
-                return this.label || this.value;
+                return typeof this.label !== 'undefined' ? this.label : this.value;
             },
 
             curValue () {
-                return this.value || this.label;
+                return typeof this.value !== 'undefined' ? this.value : this.label;
             },
 
             curSelected () {
-                return this.select.selected;
+                return this.select.val;
             }
         },
 
