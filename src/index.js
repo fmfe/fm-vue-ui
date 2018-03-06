@@ -69,7 +69,7 @@ export {
 };
 
 export default {
-    version: '1.1.1',
+    version: '1.1.2',
     install,
     Button,
     Dialog,
