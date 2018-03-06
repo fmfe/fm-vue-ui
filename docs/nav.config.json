@@ -20,6 +20,22 @@
             "href": "https://github.com/fmfe/fe-coding-style-guide/"
         },
         {
+            "title": "Table 组件",
+            "href": "https://github.com/dwqs/v2-table"
+        },
+        {
+            "title": "Datepicker 组件",
+            "href": "https://github.com/dwqs/v2-datepicker"
+        },
+        {
+            "title": "LazyList 组件",
+            "href": "https://github.com/dwqs/v2-lazy-list"
+        },
+        {
+            "title": "Scrollbar 组件",
+            "href": "https://github.com/dwqs/beautify-scrollbar"
+        },
+        {
             "title": "基础组件",
             "children": [
                 {

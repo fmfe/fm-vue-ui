@@ -1,6 +1,6 @@
 <template>
     <div class="fm-select" :class="{'is-disabled': disabled}">
-        <span ref="trigger" class="fm-selected-trigger" @click="handleTriggerClick">{{selected ? selected : _placeholder}}</span>
+        <span ref="trigger" class="fm-selected-trigger" @click="handleTriggerClick">{{label ? label : _placeholder}}</span>
         <i :class="['fm-select-icon', { 'active': shown }]"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
             <div class="fm-selectable-list-wrap" v-show="shown" :style="listWrapStyle">
@@ -22,7 +22,7 @@
         },
         props: {
             value: {
-                type: [String, Number]
+                type: [String, Number, Boolean]
             },
             disabled: {
                 type: Boolean,
@@ -38,7 +38,8 @@
             return {
                 shown: false,
                 options: [],
-                selected: '',
+                label: '',
+                val: '',
                 listWrapStyle: {
 
                 }
@@ -83,14 +84,15 @@
             },
 
             setSelectedValue (option) {
-                this.selected = option.curValue;
-                this.$emit('input', this.selected);
+                this.label = option.label;
+                this.val = option.curValue;
+                this.$emit('input', option.curValue);
                 this.shown = false;
-                this.$emit('change', this.selected);
+                this.$emit('change', option.curValue);
             },
 
             scrollToSelectedOption () {
-                const seletedOption = this.options.filter(option => option.curValue === this.selected);
+                const seletedOption = this.options.filter(option => option.curValue === this.val);
                 if (seletedOption.length) {
                     const target = seletedOption[0].$el;
                     const container = this.$el.querySelector('.fm-selectable-list');
@@ -114,14 +116,15 @@
             }
         },
 
-        created () {
-            if (this.value) {
-                this.selected = this.value;
-            }
-        },
-
         mounted () {
             window.document.addEventListener('click', this.handleDocClick, false);
+            this.$nextTick(() => {
+                if (this.value) {
+                    const option = this.options.filter(opt => opt.value === this.value);
+                    this.label = option[0] ? option[0].label : '';
+                    this.val = option[0] ? option[0].value : '';
+                }
+            });
         },
 
         beforeDestroy () {

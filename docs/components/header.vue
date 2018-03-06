@@ -1,7 +1,7 @@
 <template>
     <div class="docs-header">
         <header>
-            <img src="//www.followme.com/portalindex/assets/logo.png" alt="Followme" title="Followme">
+            <img src="https://cdn.followme.com/images/logo_50.png" alt="Followme" title="Followme">
             <span>FM Basic Vue Components</span>
         </header>
     </div>
@@ -25,6 +25,11 @@
         header {
             margin: 0 auto;
             width: 1024px;
+            position: relative;
+            span {
+                position: absolute;
+                left: 35px;
+            }
         }
         img {
             vertical-align: middle;
