@@ -2,9 +2,13 @@
     export default {
         data () {
             return {
-                val: '',
+                val: true,
                 val2: '选择2',
-                options: ['选择1', '选择2', '选择3']
+                options: ['选择1', '选择2', '选择3'],
+                options2: [
+                    { value: true, label: '展示给跟随者' },
+                    { value: false, label: '不展示给跟随者' }
+                ]
             }
         }
     }
@@ -18,7 +22,7 @@
 ::: demo `v-model` 的值为当前被选中的 `fm-option` 的 `value` 属性值
 ```html
 <fm-select v-model="val">
-    <fm-option v-for="(item, index) in options" :key="index" :value="item" :label="item"></fm-option>
+    <fm-option v-for="(item, index) in options2" :key="index" :value="item.value" :label="item.label"></fm-option>
 </fm-select>
 <fm-select v-model="val2">
     <fm-option value="" label="全部"></fm-option>
@@ -29,9 +33,13 @@
     export default {
         data () {
             return {
-                val: '',
+                val: true,
                 val2: '选择2',
-                options: ['选择1', '选择2', '选择3']
+                options: ['选择1', '选择2', '选择3'],
+                options2: [
+                    { value: true, label: '展示给跟随者' },
+                    { value: false, label: '不展示给跟随者' }
+                ]
             }
         }
     }
@@ -51,17 +59,17 @@
 ### Select 属性
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 | :---------- | :-------------- | :---------- | :--------------------------------  | :-------- |
-| value | 绑定值 | string/number | - | - |
+| value | 绑定值 | string/number/boolean | - | - |
 | disabled | 是否禁用 | boolean | — | false |
 | placeholder | 输入框占位文本	 | string | — | 请选择/Please select |
 
 ### Option 属性
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 | :---------- | :-------------- | :---------- | :--------------------------------  | :-------- |
-| value | 选项的值, 若该值为假则与 `label` 相同 | string/number | - | - |
+| value | 选项的值, 若该值为假则与 `label` 相同 | string/number/boolean | - | - |
 | label | 选项的标签，若不设置则默认与 `value` 相同 | string/number | — | - |
 
 ### 事件
 | 事件名称	      | 说明          | 回调参数 |
 | :---------- | :-------------- | :---------- |
-| change | 选值改变时触发 | (value: string \| number) |
+| change | 选值改变时触发 | (value: string \| number \| boolean) |
