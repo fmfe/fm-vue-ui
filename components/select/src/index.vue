@@ -46,6 +46,16 @@
             };
         },
 
+        watch: {
+            value (val) {
+                this.setDef();
+            },
+
+            options (val) {
+                this.setDef();
+            } 
+        },
+
         computed: {
             _placeholder () {
                 return this.placeholder ? this.placeholder : window.__vueI18n.t('select.placeholder');
@@ -53,6 +63,14 @@
         },
 
         methods: {
+            setDef () {
+                if (this.value) {
+                    const option = this.options.filter(opt => opt.value === this.value);
+                    this.label = option[0] ? option[0].label : '';
+                    this.val = option[0] ? option[0].value : '';
+                }
+            },
+
             contains (root, target) {
                 // root 节点是否包含 target 节点
                 const isElement = Object.prototype.toString.call(root).includes('Element') && Object.prototype.toString.call(target).includes('Element');
@@ -119,11 +137,7 @@
         mounted () {
             window.document.addEventListener('click', this.handleDocClick, false);
             this.$nextTick(() => {
-                if (this.value) {
-                    const option = this.options.filter(opt => opt.value === this.value);
-                    this.label = option[0] ? option[0].label : '';
-                    this.val = option[0] ? option[0].value : '';
-                }
+                this.setDef();
             });
         },
 
