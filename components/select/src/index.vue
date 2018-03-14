@@ -1,7 +1,7 @@
 <template>
     <div class="fm-select" :class="{'is-disabled': disabled}">
         <span ref="trigger" class="fm-selected-trigger" @click="handleTriggerClick">{{label ? label : _placeholder}}</span>
-        <i :class="['fm-select-icon', { 'active': shown }]"></i>
+        <i :class="['fm-select-icon', { 'active': shown }]" @click="handleTriggerClick"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
             <div class="fm-selectable-list-wrap" v-show="shown" :style="listWrapStyle">
                 <ul class="fm-selectable-list">
