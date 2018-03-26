@@ -8,11 +8,20 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
-    //background-color: rgba(0, 0, 0, 0.298);
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0;
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
 }
 
 .model-dialog-mask {
     position: fixed;
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;
@@ -49,18 +58,25 @@
 }
 
 .model-dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: auto;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // width: 300px;
+    // height: auto;
+    // background: @background-color-white;
+    // transform: translate(-150px, -50%);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 6px;
     background: @background-color-white;
-    transform: translate(-150px, -50%);
+    text-align: left;
+    white-space: normal;
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 3px 3px;
     border-top: @border-width-normal solid @border-regular-color-2;
     .dialog-top {
-        width: 300px;
+        min-width: 300px;
         height: 50px;
         line-height: 50px;
         background: @background-color-light-2;
@@ -73,7 +89,7 @@
     }
     .dialog-middle {
         font-weight: @font-weight-normal;
-        width: 260px;
+        min-width: 260px;
         margin: 20px;
         text-align: center;
         .dialog-middle-icon {
