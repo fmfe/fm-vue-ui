@@ -58,7 +58,7 @@
 
         computed: {
             _placeholder () {
-                return this.placeholder ? this.placeholder : window.__vueI18n.t('select.placeholder');
+                return this.placeholder ? this.placeholder : window.__vueI18n.t('fmselect.placeholder');
             }
         },
 

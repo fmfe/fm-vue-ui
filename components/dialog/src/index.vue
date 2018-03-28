@@ -4,7 +4,7 @@
             <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="model-dialog">
                 <div class="dialog-top" v-if="!validType">
-                    <h1>{{title ? title : vuei18n.t('dialog.title')}}</h1>
+                    <h1>{{title ? title : vuei18n.t('fmdialog.title')}}</h1>
                     <i class="dialog-close-icon" @click="onCancel"></i>
                 </div>
                 <div class="dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
@@ -13,10 +13,10 @@
                 </div>
                 <div class="dialog-bottom" v-if="!validType">
                     <span class="confirm" @click="onConfirm">
-                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('dialog.confirmText')}}
+                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('fmdialog.confirmText')}}
                     </span>
                     <span class="cancel" v-if="!isSingle" @click="onCancel">
-                        {{ cancelBtnText ? cancelBtnText : vuei18n.t('dialog.cancelText')}}
+                        {{ cancelBtnText ? cancelBtnText : vuei18n.t('fmdialog.cancelText')}}
                     </span>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 {
-    "dialog": {
+    "fmdialog": {
         "title": "请确认",
         "confirmText": "确认",
         "cancelText": "取消"
     },
-    "select": {
+    "fmselect": {
         "placeholder": "请选择"
     },
-    "input": {
+    "fminput": {
         "placeholder": "请输入"
     }
 }

@@ -85,7 +85,7 @@
             },
 
             _placeholder () {
-                return this.placeholder ? this.placeholder : window.__vueI18n.t('input.placeholder');
+                return this.placeholder ? this.placeholder : window.__vueI18n.t('fminput.placeholder');
             }
         },
 

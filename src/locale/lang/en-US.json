@@ -1,13 +1,13 @@
 {
-    "dialog": {
+    "fmdialog": {
         "title": "Confirm",
         "confirmText": "Comfirm",
         "cancelText": "Cancel"
     },
-    "select": {
+    "fmselect": {
         "placeholder": "Please select"
     },
-    "input": {
+    "fminput": {
         "placeholder": "Please input"
     }
 }
