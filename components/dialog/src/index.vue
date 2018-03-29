@@ -1,22 +1,22 @@
 <template>
     <transition name="fm-common">
-        <div class="model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop">
-            <div class="model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
-            <div class="model-dialog">
-                <div class="dialog-top" v-if="!validType">
+        <div class="fm-model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop">
+            <div class="fm-model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
+            <div class="fm-model-dialog">
+                <div class="fm-dialog-top" v-if="!validType">
                     <h1>{{title ? title : vuei18n.t('fmdialog.title')}}</h1>
-                    <i class="dialog-close-icon" @click="onCancel"></i>
+                    <i class="fm-dialog-close-icon" @click="onCancel"></i>
                 </div>
-                <div class="dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
-                    <i class="dialog-middle-icon" v-if="validType" :class="iconClass"></i>
+                <div class="fm-dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
+                    <i class="fm-dialog-middle-icon" v-if="validType" :class="iconClass"></i>
                     <span v-text="message" :style="{margin: validType ? '5px 0 15px' : 0}"></span>
                 </div>
-                <div class="dialog-bottom" v-if="!validType">
-                    <span class="confirm" @click="onConfirm">
-                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('fmdialog.confirmText')}}
-                    </span>
-                    <span class="cancel" v-if="!isSingle" @click="onCancel">
+                <div class="fm-dialog-bottom" v-if="!validType">
+                    <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
                         {{ cancelBtnText ? cancelBtnText : vuei18n.t('fmdialog.cancelText')}}
+                    </span>
+                    <span class="fm-confirm" @click="onConfirm">
+                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('fmdialog.confirmText')}}
                     </span>
                 </div>
             </div>
@@ -77,11 +77,11 @@
         computed: {
             iconClass () {
                 if (this.type === 'success') {
-                    return 'dialog-success-icon';
+                    return 'fm-dialog-success-icon';
                 }
 
                 if (this.type === 'failure') {
-                    return 'dialog-failure-icon';
+                    return 'fm-dialog-failure-icon';
                 }
             },
 

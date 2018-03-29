@@ -1,6 +1,6 @@
 @import "./common/var.less";
 
-.model-dialog-wrap {
+.fm-model-dialog-wrap {
     position: fixed;
     z-index: @z-index-popper;
     top: 0;
@@ -19,7 +19,7 @@
     }
 }
 
-.model-dialog-mask {
+.fm-model-dialog-mask {
     position: fixed;
     z-index: -1;
     top: 0;
@@ -29,7 +29,7 @@
     overflow: hidden;
 }
 
-.dialog-close-icon {
+.fm-dialog-close-icon {
     position: absolute;
     top: 21px;
     right: 20px;
@@ -57,7 +57,7 @@
     }
 }
 
-.model-dialog {
+.fm-model-dialog {
     // position: absolute;
     // top: 50%;
     // left: 50%;
@@ -75,7 +75,7 @@
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 3px 3px;
     border-top: @border-width-normal solid @border-regular-color-2;
-    .dialog-top {
+    .fm-dialog-top {
         min-width: 300px;
         height: 50px;
         line-height: 50px;
@@ -87,18 +87,18 @@
             margin: 0 0 0 20px;
         }
     }
-    .dialog-middle {
+    .fm-dialog-middle {
         font-weight: @font-weight-normal;
         min-width: 260px;
         margin: 20px;
         text-align: center;
-        .dialog-middle-icon {
+        .fm-dialog-middle-icon {
             display: inline-block;
             position: relative;
             height: 30px;
             width: 30px;
             border-radius: 50%;
-            &.dialog-success-icon {
+            &.fm-dialog-success-icon {
                 border: @border-width-normal solid #22ac75;
                 &::before {
                     position: absolute;
@@ -113,7 +113,7 @@
                     transform: rotate(-45deg);
                 }
             }
-            &.dialog-failure-icon {
+            &.fm-dialog-failure-icon {
                 border: @border-width-normal solid #fc464a;
                 &:before {
                     position: absolute;
@@ -145,7 +145,7 @@
             line-height: 22px;
         }
     }
-    .dialog-bottom {
+    .fm-dialog-bottom {
         text-align: center;
         cursor: pointer;
         margin-bottom: 20px;
@@ -157,17 +157,17 @@
             text-align: center;
             font-size: @mid-font-size;
             border-radius: @border-radius-normal;
-            &.confirm {
+            &.fm-confirm {
                 background: @background-color-light-1;
                 color: @color-white;
+                margin-left: 10px;
                 &:hover {
                     opacity: 0.8;
                 }
             }
-            &.cancel {
+            &.fm-cancel {
                 border: 1px solid @border-regular-color;
                 color: @color-regular-1;
-                margin-left: 10px;
                 &:hover {
                     border: 1px solid @background-color-light-1;
                     color: @color-primary;
