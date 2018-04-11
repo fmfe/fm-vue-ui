@@ -12,17 +12,17 @@
                 activePanel3: '外汇',
                 tabs: [
                     {
-                        index: '外汇',
+                        value: '外汇',
                         label: '外汇',
                         content: '外汇1'
                     },
                     {
-                        index: '贵金属',
+                        value: '贵金属',
                         label: '贵金属',
                         content: '贵金属1'
                     },
                     {
-                        index: '指数',
+                        value: '指数',
                         label: '指数',
                         content: '指数1'
                     }
@@ -42,21 +42,21 @@
                 console.log('点击了 tab ' + val);
             },
 
-            deleteTab (index, e) {
+            deleteTab (value, e) {
                 const tabs = [].concat(this.tabs);
                 let delIndex = -1;
 
                 for (let i = 0; i < tabs.length; i++) {
-                    if (tabs[i].index === index) {
+                    if (tabs[i].value === value) {
                         delIndex = i;
                         break;
                     }
                 }
                 if (delIndex > -1) {
                     this.tabs.splice(delIndex, 1);
-                    if (index === this.activePanel3) {
+                    if (value === this.activePanel3) {
                         const nextTab = tabs[delIndex + 1] || tabs[delIndex - 1];
-                        this.activePanel3 = nextTab.index;
+                        this.activePanel3 = nextTab.value;
                     }
                 }
             },
@@ -64,12 +64,12 @@
             addTab () {
                 const len = this.tabs.length;
                 this.tabs.push({
-                    index: this.tabs[len - 1] ? this.tabs[len - 1].index + 1 : '外汇0',
+                    value: this.tabs[len - 1] ? this.tabs[len - 1].value + 1 : '外汇0',
                     label: '外汇' + (len + 1),
                     content: 'add' + (len + 1)
                 });
                 if (this.tabs.length === 1) {
-                    this.activePanel3 = this.tabs[0].index;
+                    this.activePanel3 = this.tabs[0].value;
                 }
             }
         }
@@ -86,13 +86,13 @@
 
 ```html
 <fm-tabs v-model="activePanel">
-    <fm-tab-panel :index="0" label="外汇">
+    <fm-tab-panel :value="0" label="外汇">
         外汇
     </fm-tab-panel>
-    <fm-tab-panel :index="1" label="贵金属">
+    <fm-tab-panel :value="1" label="贵金属">
         贵金属
     </fm-tab-panel>
-    <fm-tab-panel :index="2" label="指数">
+    <fm-tab-panel :value="2" label="指数">
         指数
     </fm-tab-panel>
 </fm-tabs>
@@ -120,14 +120,14 @@
 :::demo `value` 属性指定默认的选项。
 
 ```html
-<fm-tabs v-model="activePanel2" @tab-click="tabClick">
-    <fm-tab-panel :index="0" label="外汇">
+<fm-tabs v-model="activePanel2" @chang="tabClick">
+    <fm-tab-panel :value="0" label="外汇">
         外汇
     </fm-tab-panel>
-    <fm-tab-panel :index="1" label="贵金属">
+    <fm-tab-panel :value="1" label="贵金属">
         贵金属
     </fm-tab-panel>
-    <fm-tab-panel :index="2" label="指数">
+    <fm-tab-panel :value="2" label="指数">
         指数
     </fm-tab-panel>
 </fm-tabs>
@@ -157,13 +157,13 @@
 
 ```html
 <fm-tabs type="card">
-    <fm-tab-panel :index="0" label="外汇">
+    <fm-tab-panel :value="0" label="外汇">
         外汇
     </fm-tab-panel>
-    <fm-tab-panel :index="1" label="贵金属">
+    <fm-tab-panel :value="1" label="贵金属">
         贵金属
     </fm-tab-panel>
-    <fm-tab-panel :index="2" label="指数">
+    <fm-tab-panel :value="2" label="指数">
         指数
     </fm-tab-panel>
 </fm-tabs>
@@ -179,8 +179,8 @@
 <div class="btn-wrap">
     <fm-button @click="addTab"> 添加 tab </fm-button>
 </div>
-<fm-tabs type="card" v-model="activePanel3" closable @tab-delete="deleteTab">
-    <fm-tab-panel v-for="(tab, index) in tabs" :index="tab.index" :label="tab.label" :key="index">
+<fm-tabs type="card" v-model="activePanel3" closable @delete="deleteTab">
+    <fm-tab-panel v-for="(tab, index) in tabs" :value="tab.value" :label="tab.label" :key="index">
         {{tab.content}}
     </fm-tab-panel>
 </fm-tabs>
@@ -192,17 +192,17 @@
                 activePanel3: '贵金属',
                 tabs: [
                     {
-                        index: '外汇',
+                        value: '外汇',
                         label: '外汇',
                         content: '外汇1'
                     },
                     {
-                        index: '贵金属',
+                        value: '贵金属',
                         label: '贵金属',
                         content: '贵金属1'
                     },
                     {
-                        index: '指数',
+                        value: '指数',
                         label: '指数',
                         content: '指数1'
                     }
@@ -211,21 +211,21 @@
             }
         },
         methods: {
-            deleteTab (index, e) {
+            deleteTab (value, e) {
                 const tabs = [].concat(this.tabs);
                 let delIndex = -1;
 
                 for (let i = 0; i < tabs.length; i++) {
-                    if (tabs[i].index === index) {
+                    if (tabs[i].value === value) {
                         delIndex = i;
                         break;
                     }
                 }
                 if (delIndex > -1) {
                     this.tabs.splice(delIndex, 1);
-                    if (index === this.activePanel3) {
+                    if (value === this.activePanel3) {
                         const nextTab = tabs[delIndex + 1] || tabs[delIndex - 1];
-                        this.activePanel3 = nextTab.index;
+                        this.activePanel3 = nextTab.value;
                     }
                 }
             },
@@ -233,12 +233,12 @@
             addTab () {
                 const len = this.tabs.length;
                 this.tabs.push({
-                    index: this.tabs[len - 1] ? this.tabs[len - 1].index + 1 : '外汇0',
+                    value: this.tabs[len - 1] ? this.tabs[len - 1].value + 1 : '外汇0',
                     label: '外汇' + (len + 1),
                     content: 'add' + (len + 1)
                 });
                 if (this.tabs.length === 1) {
-                    this.activePanel3 = this.tabs[0].index;
+                    this.activePanel3 = this.tabs[0].value;
                 }
             }
         }
@@ -257,12 +257,17 @@
 ### Tabs 事件
 | 事件名称      | 说明          | 回调参数 |
 | :---------- | :-------------- | :---------- |
-| tab-click | tab 被选中时触发 |  被选中的标签 tab 的 index  |
-| delete-tab | 点击 tab 移除按钮后触发 | 被删除的标签的 index |
+| change | tab 选择发生变化时触发 |  被选中的标签 tab 的 value  |
+| delete | 点击 tab 移除按钮后触发 | 被删除的标签的 value |
 
 ### Tab-panel 属性
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 | :---------- | :-------------- | :---------- | :--------------------------------  | :-------- |
-| index | 唯一能标识 tab panel 的字段 | string/number | - | - |
+| value | 唯一能标识 tab panel 的字段 | string/number | - | - |
 | label | 选项卡标题 | string | - | - |
+
+### Slot
+| 名称      | 说明         |
+| :---------- | :-------------- |
+| outer | 添加到 nav list 和 tab content 之间的部分 |
 

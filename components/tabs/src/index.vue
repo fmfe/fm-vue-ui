@@ -5,17 +5,19 @@
                     'fm-tabs-nav-item': true,
                     'fm-tabs-nav-card': type === 'card',
                     'fm-tabs-nav-panel': type === 'panel',
-                    'active': panel.index === activePanel
+                    'active': panel.value === activePanel
                  }"
                  v-for="(panel, i) in panels"
-                 @click="change(panel.index, $event)"
+                 @click="change(panel.value, $event)"
                  @mouseenter="mouseEnter(i, $event)"
                  @mouseleave="mouseLeave"
                  :key="i">
                  {{panel.label}}
-                 <i class="fm-tab-delete-icon" v-if="closable && type === 'card' && enterTarget === i" @click.stop="deleteTab(panel.index, $event)"></i>
+                 <i class="fm-tab-delete-icon" v-if="closable && type === 'card' && enterTarget === i" @click.stop="deleteTab(panel.value, $event)"></i>
             </div>
         </div>
+        <!-- fix #2 -->
+        <slot name="outer"></slot>
         <div class="fm-tabs-content">
             <slot></slot>
         </div>
@@ -50,7 +52,7 @@
 
         data () {
             return {
-                activePanel: this.value,
+                activePanel: typeof this.value !== undefined ? this.value : undefined,
                 panels: [],
                 enterTarget: -1
             };
@@ -67,11 +69,11 @@
             change (value, e) {
                 this.activePanel = value;
                 this.$emit('input', value);
-                this.$emit('tab-click', value, e);
+                this.$emit('change', value, e);
             },
 
-            deleteTab (index, e) {
-                this.$emit('tab-delete', index, e);
+            deleteTab (value, e) {
+                this.$emit('delete', value, e);
             },
 
             mouseEnter (index, e) {
@@ -99,8 +101,8 @@
         },
 
         mounted () {
-            if (!this.activePanel) {
-                this.activePanel = this.panels[0].index;
+            if (typeof this.activePanel === undefined) {
+                this.activePanel = this.panels[0].value;
             }
         }
     };

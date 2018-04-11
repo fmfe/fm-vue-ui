@@ -8,7 +8,7 @@
     export default {
         name: 'fm-tab-panel',
         props: {
-            index: {
+            value: {
                 type: [Number, String],
                 required: true
             },
@@ -27,7 +27,7 @@
 
         computed: {
             active () {
-                return this.tabs.activePanel === this.index;
+                return this.tabs.activePanel === this.value;
             }
         },
 
