@@ -18,6 +18,7 @@ import Radio from '../components/radio/index.js';
 import Switch from '../components/switch/index.js';
 import Option from '../components/option/index.js';
 import Select from '../components/select/index.js';
+import RadioButtonGroup from '../components/radio-button-group/index.js';
 
 const components = [
     Button,
@@ -33,7 +34,8 @@ const components = [
     Radio,
     Switch,
     Option,
-    Select
+    Select,
+    RadioButtonGroup
 ];
 
 const install = function (Vue, opts = {}) {
@@ -68,7 +70,8 @@ export {
     Radio,
     Switch,
     Option,
-    Select
+    Select,
+    RadioButtonGroup
 };
 
 export default {
@@ -88,6 +91,7 @@ export default {
     Radio,
     Switch,
     Option,
-    Select
+    Select,
+    RadioButtonGroup
 };
 
