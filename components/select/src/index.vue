@@ -4,9 +4,12 @@
         <i :class="['fm-select-icon', { 'active': shown }]" @click="handleTriggerClick"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
             <div class="fm-selectable-list-wrap" ref="panel" v-show="shown" :style="{top: top + 'px'}">
-                <ul class="fm-selectable-list">
+                <ul class="fm-selectable-list" v-show="options.length > 0">
                     <slot></slot>
                 </ul>
+                <p v-if="!options.length">
+                    {{emptyText || $ft('fmselect.empty')}}
+                </p>
             </div>
         </transition>
     </div>
@@ -32,6 +35,11 @@
                 default: false
             },
             placeholder: {
+                type: String,
+                default: '' 
+            },
+
+            emptyText: {
                 type: String,
                 default: '' 
             },
@@ -116,32 +124,28 @@
                 const docHeight = document.documentElement.clientHeight;
                 const docWidth = document.documentElement.clientWidth;
 
-                const topDiff = docHeight - panelDefTop;
+                const topDiff = docHeight - panelDefTop - this.offsetTop;
                 if (topDiff < panelHeight) {
                     if (top > panelHeight) {
                         return {
-                            top: -(panelHeight + 10),
-                            isMinusOffsetTop: true
+                            top: -(panelHeight + 10)
                         };
                     } else {
-                        // topDiff - panelHeight
-                        // 偏移到上边界
+                        // -panelHeight
                         return {
-                            top: -panelHeight,
-                            isMinusOffsetTop: false
+                            top: topDiff - panelHeight
                         };
                     }
                 } else {
                     return {
-                        top: height,
-                        isMinusOffsetTop: false
+                        top: height
                     };
                 }
             },
 
             setPanelPosition () {
-                const { top, isMinusOffsetTop } = this.getPanelPosition();
-                this.top = isMinusOffsetTop ? top - this.offsetTop : top;
+                const { top } = this.getPanelPosition();
+                this.top = top;
             },
 
             handleDocResize (e) {

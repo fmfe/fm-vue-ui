@@ -5,7 +5,8 @@
         "cancelText": "Cancel"
     },
     "fmselect": {
-        "placeholder": "Please select"
+        "placeholder": "Please select",
+        "empty": "No Data"
     },
     "fminput": {
         "placeholder": "Please input"

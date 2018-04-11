@@ -5,7 +5,8 @@
         "cancelText": "取消"
     },
     "fmselect": {
-        "placeholder": "请选择"
+        "placeholder": "请选择",
+        "empty": "暂无数据"
     },
     "fminput": {
         "placeholder": "请输入"
