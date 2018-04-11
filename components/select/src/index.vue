@@ -1,9 +1,9 @@
 <template>
-    <div class="fm-select" :class="{'is-disabled': disabled}">
+    <div class="fm-select" :class="{'is-disabled': disabled}" ref="wrap">
         <span ref="trigger" class="fm-selected-trigger" @click="handleTriggerClick">{{label ? label : _placeholder}}</span>
         <i :class="['fm-select-icon', { 'active': shown }]" @click="handleTriggerClick"></i>
         <transition name="fm-zoom-in-top" @before-enter="handleListEnter">
-            <div class="fm-selectable-list-wrap" v-show="shown" :style="listWrapStyle">
+            <div class="fm-selectable-list-wrap" ref="panel" v-show="shown" :style="{top: top + 'px'}">
                 <ul class="fm-selectable-list">
                     <slot></slot>
                 </ul>
@@ -31,6 +31,12 @@
             placeholder: {
                 type: String,
                 default: '' 
+            },
+
+            /* 用于计算 top 值时的额外偏移量 */
+            offsetTop: {
+                type: Number,
+                default: 0
             }
         },
 
@@ -40,9 +46,9 @@
                 options: [],
                 label: '',
                 val: '',
-                listWrapStyle: {
 
-                }
+                wrapRect: null,
+                top: 32
             };
         },
 
@@ -101,6 +107,52 @@
                 }
             },
 
+            getPanelPosition () {
+                const panelHeight = parseInt(window.getComputedStyle(this.$refs.panel, null).getPropertyValue('height'));
+                const { height, top } = this.wrapRect;
+                const panelDefTop = height + top;
+
+                const docHeight = document.documentElement.clientHeight;
+                const docWidth = document.documentElement.clientWidth;
+
+                const topDiff = docHeight - panelDefTop;
+                if (topDiff < panelHeight) {
+                    if (top > panelHeight) {
+                        return {
+                            top: -(panelHeight + 10),
+                            isMinusOffsetTop: true
+                        };
+                    } else {
+                        // topDiff - panelHeight
+                        // 偏移到上边界
+                        return {
+                            top: -panelHeight,
+                            isMinusOffsetTop: false
+                        };
+                    }
+                } else {
+                    return {
+                        top: height,
+                        isMinusOffsetTop: false
+                    };
+                }
+            },
+
+            setPanelPosition () {
+                const { top, isMinusOffsetTop } = this.getPanelPosition();
+                this.top = isMinusOffsetTop ? top - this.offsetTop : top;
+            },
+
+            handleDocResize (e) {
+                if (!this.shown) {
+                    return;
+                }
+                this.wrapRect = this.$refs.wrap.getBoundingClientRect();
+                this.$nextTick(() => {
+                    this.setPanelPosition();
+                });
+            },
+
             setSelectedValue (option) {
                 this.label = option.label;
                 this.val = option.curValue;
@@ -110,7 +162,7 @@
             },
 
             scrollToSelectedOption () {
-                const seletedOption = this.options.filter(option => option.curValue === this.val);
+                const seletedOption = this.options.filter(option => option.value === this.val);
                 if (seletedOption.length) {
                     const target = seletedOption[0].$el;
                     const container = this.$el.querySelector('.fm-selectable-list');
@@ -130,12 +182,18 @@
             },
 
             handleListEnter () {
-                this.$nextTick(() => this.scrollToSelectedOption());
+                this.wrapRect = this.$refs.wrap.getBoundingClientRect();
+                this.$nextTick(() => {
+                    this.setPanelPosition();
+                    this.scrollToSelectedOption();
+                });
             }
         },
 
         mounted () {
             window.document.addEventListener('click', this.handleDocClick, false);
+            window.document.addEventListener('scroll', this.handleDocResize, false);
+            window.addEventListener('resize', this.handleDocResize, false);
             this.$nextTick(() => {
                 this.setDef();
             });
@@ -143,6 +201,8 @@
 
         beforeDestroy () {
             window.document.removeEventListener('click', this.handleDocClick);
+            window.document.removeEventListener('scroll', this.handleDocResize, false);
+            window.removeEventListener('resize', this.handleDocResize, false);
         }
     };
 </script>
