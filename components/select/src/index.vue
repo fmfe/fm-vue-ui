@@ -13,8 +13,11 @@
 </template>
 
 <script>
+    import i18n from 'main/mixins/i18n';
+
     export default {
         name: 'fm-select',
+        mixins: [i18n],
         provide () {
             return {
                 'select': this
@@ -60,7 +63,7 @@
 
         computed: {
             _placeholder () {
-                return this.placeholder ? this.placeholder : window.__vueI18n.t('fmselect.placeholder');
+                return this.placeholder ? this.placeholder : this.$ft('fmselect.placeholder');
             }
         },
 

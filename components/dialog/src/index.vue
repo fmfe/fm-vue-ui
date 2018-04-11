@@ -4,7 +4,7 @@
             <div class="fm-model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="fm-model-dialog">
                 <div class="fm-dialog-top" v-if="!validType">
-                    <h1>{{title ? title : vuei18n.t('fmdialog.title')}}</h1>
+                    <h1>{{title ? title : $ft('fmdialog.title')}}</h1>
                     <i class="fm-dialog-close-icon" @click="onCancel"></i>
                 </div>
                 <div class="fm-dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
@@ -13,10 +13,10 @@
                 </div>
                 <div class="fm-dialog-bottom" v-if="!validType">
                     <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
-                        {{ cancelBtnText ? cancelBtnText : vuei18n.t('fmdialog.cancelText')}}
+                        {{ cancelBtnText ? cancelBtnText : $ft('fmdialog.cancelText')}}
                     </span>
                     <span class="fm-confirm" @click="onConfirm">
-                        {{ confirmBtnText ? confirmBtnText : vuei18n.t('fmdialog.confirmText')}}
+                        {{ confirmBtnText ? confirmBtnText : $ft('fmdialog.confirmText')}}
                     </span>
                 </div>
             </div>
@@ -25,8 +25,11 @@
 </template>
 
 <script>
+    import i18n from 'main/mixins/i18n';
+
     export default {
         name: 'fm-dialog',
+        mixins: [i18n],
         props: {
             mask: {
                 type: Boolean,
@@ -69,8 +72,7 @@
         },
         data () {
             return {
-                shown: false,
-                vuei18n: window.__vueI18n
+                shown: false
             };
         },
 

@@ -22,7 +22,7 @@
                 size ? 'fm-inner-input-' + size : 'fm-inner-input-medium',
             ]"
             :value="currentValue"
-            :placeholder="_placeholder"
+            :placeholder="placeholder || $ft('fminput.placeholder')"
             :disabled="disabled"
             ref="input"
             @input="handleInput"
@@ -40,8 +40,11 @@
 </template>
 
 <script>
+    import i18n from 'main/mixins/i18n';
+
     export default {
         name: 'fm-input',
+        mixins: [i18n],
         props: {
             value: {
                 type: [String, Number],
@@ -82,10 +85,6 @@
 
             isGroup () {
                 return this.$slots.prepend || this.$slots.append;
-            },
-
-            _placeholder () {
-                return this.placeholder ? this.placeholder : window.__vueI18n.t('fminput.placeholder');
             }
         },
 
