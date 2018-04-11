@@ -1,8 +1,15 @@
-import locale from 'main/locale/index.js';
+import locale from 'fm-vue-ui/src/locale/index.js';
 
 export default {
-    beforeCreate () {
-        this.$ft = locale.t;
-        this.$fl = locale.getLocale();
+    computed: {
+        $fl () {
+            return locale.getLocale();
+        }
+    },
+
+    methods: {
+        $ft (...args) {
+            return locale.t.apply(this, args);
+        }
     }
 };
