@@ -3,6 +3,17 @@
         <div class="heading">更新日志</div>
         <ul class="timeline">
             <li>
+                <h3>2.0.0</h3>
+                <em>2018/04/11</em>
+                <ul>
+                    <li>添加 RadioButtonGroup 组件</li>
+                    <li>优化 select/tabs 等组件</li>
+                    <li>优化国际化处理</li>
+                    <li>一些 BugFix</li>
+                    <li>构建优化</li>
+                </ul>
+            </li>
+            <li>
                 <h3>1.0.0</h3>
                 <em>2017/12/27</em>
                 <ul>
