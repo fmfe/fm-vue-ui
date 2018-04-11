@@ -102,6 +102,11 @@
                     "title": "Select 选择器",
                     "name": "select",
                     "path": "/select"
+                },
+                {
+                    "title": "RBG 按钮组",
+                    "name": "rbg",
+                    "path": "/rbg"
                 }
             ]
         }
