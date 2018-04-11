@@ -26,36 +26,38 @@ new Vue({
 ```
 
 #### 按需引入
-借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
+借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component) 或者 [babel-plugin-on-demand-import](https://github.com/dwqs/babel-plugin-on-demand-import), 我们可以只引入需要的组件，以达到减小项目体积的目的。
 
-首先，安装 `babel-plugin-component`：
 
-```
-npm install babel-plugin-component -D
-```
 
-然后，将 `.babelrc` 修改为：
+babel-plugin-component配置：
 
 ```js
-"presets": [
-    [
-      "env", {
-        "targets": {
-          "browsers": ["last 5 versions", "safari > 8"]
-        },
-        "modules": false,
-        "useBuiltIns": "entry",
-        "loose": true
-      }
-    ],
-    "stage-2"
-  ],
+ // .babelrc
+  // ....
   "plugins": [["component", [
     {
       "libraryName": "fm-vue-ui",
       "styleLibraryName": "theme-default"
     }
   ]]]
+  // ...
+```
+
+babel-plugin-on-demand-import配置：
+
+```js
+// .babelrc
+  // ....
+  "plugins": [[
+    "on-demand-import", {
+      "libraryName": "fm-vue-ui",
+      "libraryPath": "lib",
+      "stylePath": "lib/theme-default",
+      "needImportStyle": true
+    }
+  ]]
+  // ...
 ```
 
 接下来，如果你只希望引入部分组件，比如 `Button`，那么需要在 `main.js` 中写入以下内容：
