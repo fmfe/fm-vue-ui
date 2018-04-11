@@ -1,0 +1,43 @@
+@import "./common/var.less";
+
+.fm-radio-button-group {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+}
+.fm-radio-button {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: @min-font-size;
+    cursor: pointer;
+    color: @color-regular-1;
+    line-height: 25px;
+    // height: 25px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: @border-width-base solid @border-regular-color;
+    border-bottom: @border-width-base solid @border-regular-color;
+    border-left:  @border-width-base solid @border-regular-color;
+    background: @background-color-white;
+    &:first-child {
+        border-top-left-radius: @border-width-normal;
+        border-bottom-left-radius: @border-width-normal;
+    }
+    &:last-child {
+        border-right: @border-width-base solid @border-regular-color;
+        border-top-right-radius: @border-width-normal;
+        border-bottom-right-radius: @border-width-normal;
+    }
+    &.active {
+        border: none;
+        border-top: @border-width-base solid @background-color-light-5;
+        border-bottom: @border-width-base solid @background-color-light-5;
+        border-radius: @border-width-normal;
+        background-color: @background-color-light-5;
+        color: @color-white;
+        + .fm-radio-button {
+             border-left: none;
+        }
+    }
+}

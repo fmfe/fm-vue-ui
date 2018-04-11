@@ -13,6 +13,7 @@
     "radio": "./components/radio/index.js",
     "switch": "./components/switch/index.js",
     "option": "./components/option/index.js",
-    "select": "./components/select/index.js"
+    "select": "./components/select/index.js",
+    "radio-button-group": "./components/radio-button-group/index.js"
 }
   
