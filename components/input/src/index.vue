@@ -40,7 +40,7 @@
 </template>
 
 <script>
-    import i18n from 'main/mixins/i18n';
+    import i18n from 'fm-vue-ui/src/mixins/i18n';
 
     export default {
         name: 'fm-input',
