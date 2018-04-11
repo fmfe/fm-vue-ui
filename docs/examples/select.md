@@ -14,7 +14,7 @@
 
         mounted () {
             // setTimeout(() => {
-            //     this.options = ['选择3', '选择4', '选择5'];
+            //     this.options = ["AUD/CAD", "AUD/JPY", "UKOil", "EUR/USD", "XAU/USD", "XAG/USD", "USOil"];
             // }, 2000)
         }
     }
@@ -68,6 +68,7 @@
 | value | 绑定值 | string/number/boolean | - | - |
 | disabled | 是否禁用 | boolean | — | false |
 | placeholder | 输入框占位文本	 | string | — | 请选择/Please select |
+| emptyText | 无数据时显示的文本	 | string | — | 暂无数据/No Data |
 
 ### Option 属性
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |

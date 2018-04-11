@@ -3,6 +3,14 @@
         <div class="heading">更新日志</div>
         <ul class="timeline">
             <li>
+                <h3>2.0.1</h3>
+                <em>2018/04/11</em>
+                <ul>
+                    <li>select组件支持 emptyText 属性</li>
+                    <li>fix select组件的 offsetTop 计算</li>
+                </ul>
+            </li>
+            <li>
                 <h3>2.0.0</h3>
                 <em>2018/04/11</em>
                 <ul>
