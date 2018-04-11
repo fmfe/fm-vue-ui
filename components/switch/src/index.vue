@@ -43,6 +43,7 @@
             handleChange (e) {
                 this.selfChecked = e.target.checked;
                 this.caclBthLeft();
+                this.$emit('input', this.selfChecked);
                 this.$emit('change', e);
             },
 

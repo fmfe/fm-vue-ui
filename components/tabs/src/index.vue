@@ -62,6 +62,7 @@
             value (val) {
                 this.activePanel = this.initDefValue();
                 this.$emit('input', this.activePanel);
+                this.$emit('change', this.activePanel);
             }
         },
 
@@ -81,7 +82,7 @@
             change (value, e) {
                 this.activePanel = value;
                 this.$emit('input', value);
-                this.$emit('change', value, e);
+                this.$emit('change', value);
             },
 
             deleteTab (value, e) {

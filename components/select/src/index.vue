@@ -81,8 +81,8 @@
                 this.label = option[0] ? option[0].label : '';
                 this.val = option[0] ? option[0].value : '';
                 if (!option[0]) {
-                    this.$emit('change', '');
                     this.$emit('input', '');
+                    this.$emit('change', '');
                 }
             },
 
@@ -160,8 +160,8 @@
 
             setSelectedValue (option) {
                 this.shown = false;
-                this.$emit('change', option.value);
                 this.$emit('input', option.value);
+                this.$emit('change', option.value);
             },
 
             scrollToSelectedOption () {
