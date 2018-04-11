@@ -1,6 +1,6 @@
 {
   "name": "fm-vue-ui",
-  "version": "1.1.6",
+  "version": "2.0.0",
   "description": "Basic Vue Components for FM",
   "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
@@ -31,7 +31,8 @@
     "build:theme": "node build/bin/build-theme.js && npx gulp build --gulpfile theme-default/gulpfile.js",
     "build:package": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.package.config.js --progress --hide-modules",
     "build:components": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.components.config.js --progress --hide-modules",
-    "prepublishOnly": "npm run build:entry && npm run build:package && npm run build:components && npm run build:locale && npm run build:theme && npm run build:utils",
+    "prepublishOnly": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
+    "test:publish": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
     "lint": "npm run lint:vue & npm run lint:style",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
     "lint:style": "npx stylelint \"{sites,components}/**/*.less\" --syntax less",
