@@ -52,7 +52,7 @@
 
         data () {
             return {
-                activePanel: typeof this.value !== undefined ? this.value : undefined,
+                activePanel: undefined,
                 panels: [],
                 enterTarget: -1
             };
@@ -60,12 +60,22 @@
 
         watch: {
             value (val) {
-                this.activePanel = val;
-                this.$emit('input', val);
+                this.activePanel = this.initDefValue();
+                this.$emit('input', this.activePanel);
             }
         },
 
         methods: {
+            initDefValue () {
+                // 验证 value 是否 valid
+                const def = this.panels.filter(panel => panel.value === this.value);
+                if (def[0]) {
+                    return this.value;
+                } else {
+                    return this.panels[0].value;
+                }
+            },
+
             change (value, e) {
                 this.activePanel = value;
                 this.$emit('input', value);
@@ -101,9 +111,7 @@
         },
 
         mounted () {
-            if (typeof this.activePanel === undefined) {
-                this.activePanel = this.panels[0].value;
-            }
+            this.activePanel = this.initDefValue();
         }
     };
 </script>
