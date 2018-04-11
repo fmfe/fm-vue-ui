@@ -1,7 +1,11 @@
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
+const fs = require('fs');
 
 const Components = require('../components.json');
+// const utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
+const mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
+
 const vueExternal = {
     'vue': {
         root: 'Vue',
@@ -15,6 +19,19 @@ let externals = {};
 
 Object.keys(Components).forEach(function (key) {
     externals[`fm-vue-ui/components/${key}`] = `fm-vue-ui/lib/${key}`;
+});
+
+externals['fm-vue-ui/src/locale'] = 'fm-vue-ui/lib/locale';
+externals[`fm-vue-ui/src/utils`] = `fm-vue-ui/lib/utils`;
+
+// utilsList.forEach(file => {
+//     file = path.basename(file, '.js');
+//     externals[`fm-vue-ui/src/utils/${file}`] = `fm-vue-ui/lib/utils/${file}`;
+// });
+
+mixinsList.forEach(file => {
+    file = path.basename(file, '.js');
+    externals[`fm-vue-ui/src/mixins/${file}`] = `fm-vue-ui/lib/mixins/${file}`;
 });
 
 externals = [

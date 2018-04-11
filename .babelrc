@@ -11,9 +11,5 @@
       }
     ],
     "stage-2"
-  ],
-  "plugins": [["replace-import-path", {
-    "src": "main/mixins/i18n",
-    "dest": "fm-vue-ui/lib/mixins/i18n.js"
-  }]]
+  ]
 }
