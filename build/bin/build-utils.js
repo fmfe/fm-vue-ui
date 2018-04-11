@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').execSync;
+const babel = require('babel-core');
 
 const utilsPath = path.resolve(__dirname, '../../src/utils/');
 const outputPath = path.resolve(__dirname, '../../lib/utils/');
@@ -17,8 +18,8 @@ function dirExist (path) {
 }
 
 function transformFile (filename, name, cb) {
-    require('babel-core').transformFile(path.resolve(utilsPath, filename), {
-        plugins: ['transform-es2015-modules-commonjs'],
+    babel.transformFile(path.resolve(utilsPath, filename), {
+        plugins: ['add-module-exports', 'transform-es2015-modules-commonjs'],
         moduleId: name
     }, cb);
 }

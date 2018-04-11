@@ -10,9 +10,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import FMUI from 'main/index';
-import locale from 'main/locale/i18n';
 // import fmutils from 'main/utils/index';
 import 'fm-vue-ui/theme-default/src/index.less';
+// import locale from 'main/locale/index';
 
 import routes from './routes.config';
 import entry from './entry.vue';
@@ -21,10 +21,14 @@ import DocsSideNav from './components/side-nav.vue';
 import DocsDemoBlock from './components/demo-block.vue';
 
 import i18n from './i18n/index';
-locale.setI18n(i18n);
 // Vue.prototype.$utils = fmutils;
+// locale.use(i18n.locale);
+Vue.use(FMUI, {
+    lang: i18n.locale
+});
+// Vue.use(Button);
+// Vue.use(Input);
 
-Vue.use(FMUI);
 Vue.use(VueRouter);
 Vue.component('docs-demo-block', DocsDemoBlock);
 Vue.component('docs-header', DocsHeader);
