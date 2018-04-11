@@ -10,6 +10,12 @@
                     { value: false, label: '不展示给跟随者' }
                 ]
             }
+        },
+
+        mounted () {
+            // setTimeout(() => {
+            //     this.options = ['选择3', '选择4', '选择5'];
+            // }, 2000)
         }
     }
 </script>

@@ -48,7 +48,7 @@
             }
         },
 
-        created () {
+        mounted () {
             this.select.options.push(this);
         }
     };

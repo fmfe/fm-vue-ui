@@ -72,6 +72,8 @@
                 if (def[0]) {
                     return this.value;
                 } else {
+                    this.$emit('input', this.panels[0].value);
+                    this.$emit('change', this.panels[0].value);
                     return this.panels[0].value;
                 }
             },

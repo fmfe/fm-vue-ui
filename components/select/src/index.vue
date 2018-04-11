@@ -55,11 +55,7 @@
         watch: {
             value (val) {
                 this.setDef();
-            },
-
-            options (val) {
-                this.setDef();
-            } 
+            }
         },
 
         computed: {
@@ -70,10 +66,12 @@
 
         methods: {
             setDef () {
-                if (this.value) {
-                    const option = this.options.filter(opt => opt.value === this.value);
-                    this.label = option[0] ? option[0].label : '';
-                    this.val = option[0] ? option[0].value : '';
+                const option = this.options.filter(opt => opt.value === this.value);
+                this.label = option[0] ? option[0].label : '';
+                this.val = option[0] ? option[0].value : '';
+                if (!option[0]) {
+                    this.$emit('change', '');
+                    this.$emit('input', '');
                 }
             },
 
@@ -154,11 +152,9 @@
             },
 
             setSelectedValue (option) {
-                this.label = option.label;
-                this.val = option.curValue;
-                this.$emit('input', option.curValue);
                 this.shown = false;
-                this.$emit('change', option.curValue);
+                this.$emit('change', option.value);
+                this.$emit('input', option.value);
             },
 
             scrollToSelectedOption () {
@@ -194,9 +190,10 @@
             window.document.addEventListener('click', this.handleDocClick, false);
             window.document.addEventListener('scroll', this.handleDocResize, false);
             window.addEventListener('resize', this.handleDocResize, false);
-            this.$nextTick(() => {
+            
+            if (typeof this.value !== 'undefined') {
                 this.setDef();
-            });
+            }
         },
 
         beforeDestroy () {
