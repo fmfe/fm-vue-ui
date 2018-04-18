@@ -30,7 +30,8 @@ module.exports = {
         alias: {
             components: path.resolve(__dirname, '../components'),
             'main': path.resolve(__dirname, '../src'),
-            'vue$': 'vue/dist/vue.esm.js'
+            'vue$': 'vue/dist/vue.esm.js',
+            'fm-vue-ui': path.resolve(__dirname, '../')
         },
         modules: [path.join(__dirname, '../node_modules')]
     },
