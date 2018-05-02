@@ -65,7 +65,14 @@
 
         watch: {
             value (val) {
-                this.setDef();
+                this.options.length && this.setDef();
+            },
+
+            options (val) {
+                clearTimeout(this.timer);
+                this.timer = setTimeout(() => {
+                    this.value && this.setDef();
+                }, 300);
             }
         },
 
@@ -198,7 +205,7 @@
             window.document.addEventListener('scroll', this.handleDocResize, false);
             window.addEventListener('resize', this.handleDocResize, false);
             
-            if (typeof this.value !== 'undefined') {
+            if (typeof this.value !== 'undefined' && this.options.length) {
                 this.setDef();
             }
         },
