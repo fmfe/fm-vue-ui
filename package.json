@@ -1,6 +1,6 @@
 {
   "name": "fm-vue-ui",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Basic Vue Components for FM",
   "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
@@ -8,7 +8,8 @@
   "private": false,
   "files": [
     "lib",
-    "components"
+    "package.json",
+    "README.md"
   ],
   "repository": {
     "type": "git",
