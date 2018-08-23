@@ -21,8 +21,8 @@ Object.keys(Components).forEach(function (key) {
     externals[`fm-vue-ui/components/${key}`] = `fm-vue-ui/lib/${key}`;
 });
 
-externals['fm-vue-ui/src/locale'] = 'fm-vue-ui/lib/locale';
-externals[`fm-vue-ui/src/utils`] = `fm-vue-ui/lib/utils`;
+externals['fm-vue-ui/src/locale'] = '@fmfe/fm-vue-ui/lib/locale';
+externals[`fm-vue-ui/src/utils`] = `@fmfe/fm-vue-ui/lib/utils`;
 
 // utilsList.forEach(file => {
 //     file = path.basename(file, '.js');
@@ -31,7 +31,7 @@ externals[`fm-vue-ui/src/utils`] = `fm-vue-ui/lib/utils`;
 
 mixinsList.forEach(file => {
     file = path.basename(file, '.js');
-    externals[`fm-vue-ui/src/mixins/${file}`] = `fm-vue-ui/lib/mixins/${file}`;
+    externals[`fm-vue-ui/src/mixins/${file}`] = `@fmfe/fm-vue-ui/lib/mixins/${file}`;
 });
 
 externals = [
