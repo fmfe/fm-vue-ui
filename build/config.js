@@ -18,7 +18,7 @@ const vueExternal = {
 let externals = {};
 
 Object.keys(Components).forEach(function (key) {
-    externals[`fm-vue-ui/components/${key}`] = `fm-vue-ui/lib/${key}`;
+    externals[`fm-vue-ui/components/${key}`] = `@fmfe/fm-vue-ui/lib/${key}`;
 });
 
 externals['fm-vue-ui/src/locale'] = '@fmfe/fm-vue-ui/lib/locale';

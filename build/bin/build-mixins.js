@@ -21,7 +21,7 @@ function transformFile (filename, name, cb) {
     babel.transformFile(path.resolve(mixinsPath, filename), {
         plugins: [['replace-import-path', {
             src: 'fm-vue-ui/src/locale/index.js',
-            dest: 'fm-vue-ui/lib/locale/index.js'
+            dest: '@fmfe/fm-vue-ui/lib/locale/index.js'
         }], 'add-module-exports', 'transform-es2015-modules-commonjs'],
         moduleId: name
     }, cb);
