@@ -38,6 +38,12 @@
                 width: 0
             };
         },
+        
+        watch: {
+            value (val) {
+                this.selfChecked = val
+            }
+        },
 
         methods: {
             handleChange (e) {
