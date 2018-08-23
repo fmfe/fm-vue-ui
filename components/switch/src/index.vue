@@ -41,7 +41,7 @@
         
         watch: {
             value (val) {
-                this.selfChecked = val
+                this.selfChecked = val;
             }
         },
 
