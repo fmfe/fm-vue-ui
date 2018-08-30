@@ -1,19 +1,19 @@
 <template>
     <label ref="label" class="fm-switch">
-        <input  type="checkbox" 
-                class="fm-switch-input" 
-                v-model="selfChecked"
-                :disabled="disabled" 
-                @change="handleChange">
+        <input type="checkbox"
+               class="fm-switch-input"
+               v-model="selfChecked"
+               :disabled="disabled"
+               @change="handleChange">
         <div :class="[
             'fm-switch-label',
-            { 
+            {
                 'is-checked': selfChecked,
                 'is-disabled': disabled
             }
         ]">
         </div>
-        <span class="fm-switch-btn" :style="{left: this.left}"></span>
+        <span class="fm-switch-btn" :style="{left: leftOffset}"></span>
     </label>
 </template>
 
@@ -34,17 +34,24 @@
         data () {
             return {
                 selfChecked: false,
-                left: '2px',
                 width: 0
             };
         },
-        
+
         watch: {
             value (val) {
                 this.selfChecked = val;
             }
         },
-
+        computed: {
+            leftOffset () {
+                if (this.selfChecked) {
+                    return `${this.width - 18}px`;
+                } else {
+                    return '2px';
+                }
+            }
+        },
         methods: {
             handleChange (e) {
                 this.selfChecked = e.target.checked;
