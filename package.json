@@ -1,6 +1,6 @@
 {
   "name": "@fmfe/fm-vue-ui",
-  "version": "2.0.54",
+  "version": "2.0.55",
   "description": "Basic Vue Components for FM",
   "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
