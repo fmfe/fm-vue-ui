@@ -40,11 +40,11 @@ const components = [
 
 const install = function (Vue, opts = {}) {
     if (install.installed) return;
+
     let lang = 'zh-CN';
     try {
         lang = opts.lang || (window.FMlocale ? window.FMlocale() : 'zh-CN');
-    } catch (e) {
-    }
+    } catch (e) {}
     locale.use(lang);
 
     components.map(component => {

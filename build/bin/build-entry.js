@@ -22,7 +22,11 @@ const components = [
 const install = function (Vue, opts = {}) {
     if (install.installed) return;
 
-    locale.use(opts.lang || (window.FMlocale ? window.FMlocale() : 'zh-CN'));
+    let lang = 'zh-CN';
+    try {
+        lang = opts.lang || (window.FMlocale ? window.FMlocale() : 'zh-CN');
+    } catch (e) {}
+    locale.use(lang);
 
     components.map(component => {
         Vue.component(component.name, component);
