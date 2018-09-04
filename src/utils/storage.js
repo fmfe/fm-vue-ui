@@ -1,10 +1,9 @@
 const prefix = '_fm_';
-const { localStorage: l, sessionStorage: s } = window;
-
+const s = sessionStorage;
 export const localStorage = {
     set (key, val) {
         try {
-            l.setItem(prefix + key, JSON.stringify(val));
+            window.localStorage.setItem(prefix + key, JSON.stringify(val));
         } catch (err) {
             alert('localStorage 写入出错');
         }
@@ -12,25 +11,25 @@ export const localStorage = {
 
     get (key) {
         try {
-            const val = l.getItem(prefix + key);
+            const val = window.localStorage.getItem(prefix + key);
             return JSON.parse(val);
         } catch (e) {
-            return l.getItem(prefix + key);
+            return window.localStorage.getItem(prefix + key);
         }
     },
 
     remove (key) {
-        l.removeItem(prefix + key);
+        window.localStorage.removeItem(prefix + key);
     },
 
     clear () {
-        l.clear();
+        window.localStorage.clear();
     },
 
     getAll () {
         const res = {};
-        for (let i = l.length - 1; i >= 0; i--) {
-            let key = l.key(i);
+        for (let i = window.localStorage.length - 1; i >= 0; i--) {
+            let key = window.localStorage.key(i);
             if (key.startsWith(prefix)) {
                 key = key.slice(prefix.length);
                 res[key] = localStorage.get(key);
@@ -43,7 +42,7 @@ export const localStorage = {
 export const sessionStorage = {
     set (key, val) {
         try {
-            s.setItem(prefix + item, JSON.stringify(val));
+            window.sessionStorage.setItem(prefix + item, JSON.stringify(val));
         } catch (err) {
             alert('sessionStorage 写入出错');
         }
@@ -51,25 +50,25 @@ export const sessionStorage = {
 
     get (key) {
         try {
-            const val = s.getItem(prefix + key);
+            const val = window.sessionStorage.getItem(prefix + key);
             return JSON.parse(val);
         } catch (e) {
-            return s.getItem(prefix + key);
+            return window.sessionStorage.getItem(prefix + key);
         }
     },
 
     remove (key) {
-        s.removeItem(prefix + key);
+        window.sessionStorage.removeItem(prefix + key);
     },
 
     clear () {
-        s.clear();
+        window.sessionStorage.clear();
     },
 
     getAll () {
         const res = {};
-        for (let i = s.length - 1; i >= 0; i--) {
-            let key = s.key(i);
+        for (let i = window.sessionStorage.length - 1; i >= 0; i--) {
+            let key = window.sessionStorage.key(i);
             if (key.startsWith(prefix)) {
                 key = key.slice(prefix.length);
                 res[key] = sessionStorage.get(key);
