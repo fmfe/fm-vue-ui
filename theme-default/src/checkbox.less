@@ -37,10 +37,6 @@
     outline: none;
     cursor: pointer;
     vertical-align: middle;
-    &.fm-checkbox-small {
-        width: 16px;
-        height: 16px;
-    }
     .fm-checkbox-inner {
         position: relative;
         display: inline-block;
@@ -65,18 +61,25 @@
             transform: rotate(45deg) scaleY(0);
         }
     }
+    &.fm-checkbox-small {
+        width: 16px;
+        height: 16px;
+        .fm-checkbox-inner::after {
+            .checkbox-inner-after(1px, 5px, 5px, 10px, @border-width-normal, @border-primary-color);
+        }
+    }
     &.fm-checkbox-medium {
         width: 20px;
         height: 20px;
         .fm-checkbox-inner::after {
-            .checkbox-inner-after(2px, 6px, 4px, 8px, @border-width-normal, @border-primary-color);
+            .checkbox-inner-after(2px, 8px, 5px, 12px, @border-width-normal, @border-primary-color);
         }
     }
     &.fm-checkbox-large {
         width: 24px;
         height: 24px;
         .fm-checkbox-inner::after {
-            .checkbox-inner-after(2px, 8px, 5px, 10px, @border-width-normal, @border-primary-color);
+            .checkbox-inner-after(2px, 9px, 6px, 14px, @border-width-normal, @border-primary-color);
         }
     }
     &.is-disabled {

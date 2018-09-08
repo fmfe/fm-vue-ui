@@ -1,28 +1,26 @@
 <template>
     <label class="fm-checkbox" :class="{
-            'is-checked': isChecked,
-            'is-disabled': isDisabled
+            'is-checked': selfModel,
+            'is-disabled': disabled
         }">
         <span :class="[
             'fm-checkbox-input',
             size ? 'fm-checkbox-' + size : 'fm-checkbox-small',
             {
-                'is-checked': isChecked,
-                'is-disabled': isDisabled
+                'is-checked': selfModel,
+                'is-disabled': disabled
             }
         ]">
             <span class="fm-checkbox-inner"></span>
-            <input  type="checkbox" 
-                    v-model="model" 
-                    :value="label"
-                    :name="name"
-                    class="fm-checkbox-original"
-                    :disabled="isDisabled" 
-                    @change="handleChange">
+            <input type="checkbox"
+                   v-model="selfModel"
+                   :value="label"
+                   :name="name"
+                   class="fm-checkbox-original"
+                   :disabled="disabled">
         </span>
         <span class="fm-checkbox-label" v-if="label || $slots.default">
-            <slot></slot>
-            <template v-if="!$slots.default">{{label}}</template>
+            <slot>{{label}}</slot>
         </span>
     </label>
 </template>
@@ -44,39 +42,20 @@
                 default: false
             }
         },
-
         data () {
             return {
-                selfModel: false
+                selfModel: this.value
             };
         },
-
-        computed: {
-            model: {
-                get () {
-                    return this.value ? this.value : this.selfModel;
-                },
-
-                set (val) {
-                    this.$emit('input', val);
-                    this.selfModel = val;
-                }
+        watch: {
+            value (val) {
+                if (this.selfModel === val) return;
+                this.selfModel = val;
             },
-
-            isChecked () {
-                if ({}.toString.call(this.model) === '[object Boolean]') {
-                    return this.model;
-                }
-            },
-
-            isDisabled () {
-                return this.disabled;
-            }
-        },
-
-        methods: {
-            handleChange (e) {
-                this.$emit('change', e.target.value, e);
+            selfModel (val) {
+                if (this.value === val) return;
+                this.$emit('input', val);
+                this.$emit('change', val);
             }
         }
     };
