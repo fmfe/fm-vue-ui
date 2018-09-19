@@ -15,8 +15,8 @@
         <div class="fm-inner-input-group-prepend" v-if="$slots.prepend">
             <slot name="prepend"></slot>
         </div>
-        <input 
-            type="text"
+        <input
+            :type="type"
             :class="[
                 'fm-inner-input',
                 size ? 'fm-inner-input-' + size : 'fm-inner-input-medium',
@@ -31,11 +31,11 @@
             @change="handleChange"
             v-bind="$props">
         <span v-if="showClear" class="fm-inner-suffix-icon" :style="suffixOffset">
-            <i class="fm-input-icon fm-input-clear-icon" @click="clear"></i>  
-        </span>  
+            <i class="fm-input-icon fm-input-clear-icon" @click="clear"></i>
+        </span>
         <div class="fm-inner-input-group-append" v-if="$slots.append">
             <slot name="append"></slot>
-        </div>     
+        </div>
     </div>
 </template>
 
@@ -66,9 +66,13 @@
             clearable: {
                 type: Boolean,
                 default: false
+            },
+            type: {
+                type: String,
+                default: 'text'
             }
         },
-    
+
         data () {
             return {
                 currentValue: this.value,
@@ -90,7 +94,7 @@
 
         watch: {
             'value' (val, oldVal) {
-                this.setCurrentValue(val);   
+                this.setCurrentValue(val);
             }
         },
 
