@@ -1,11 +1,12 @@
 <template>
     <transition name="fm-common">
         <div class="fm-model-dialog-wrap" :class="classes" v-show="shown" @click.stop="preventStop">
-            <div class="fm-model-dialog-mask" :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
+            <div class="fm-model-dialog-mask"
+                 :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="fm-model-dialog">
                 <div class="fm-dialog-top" v-if="!validType">
                     <h1>{{title ? title : $ft('fmdialog.title')}}</h1>
-                    <i class="fm-dialog-close-icon" @click="onCancel"></i>
+                    <i class="fm-dialog-close-icon" @click="requestClose"></i>
                 </div>
                 <div class="fm-dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
                     <i class="fm-dialog-middle-icon" v-if="validType" :class="iconClass"></i>
@@ -67,8 +68,13 @@
                 type: Boolean,
                 default: false
             },
+            cancelOnClose: {
+                type: Boolean,
+                default: true
+            },
             onCancel: null,
-            onConfirm: null
+            onConfirm: null,
+            onClose: null
         },
         data () {
             return {
@@ -95,6 +101,13 @@
         methods: {
             preventStop () {
 
+            },
+            requestClose () {
+                if (this.cancelOnClose) {
+                    this.onCancel();
+                } else {
+                    this.onClose();
+                }
             }
         }
     };
