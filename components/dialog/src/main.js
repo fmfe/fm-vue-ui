@@ -59,6 +59,16 @@ const Dialog = function (opts) {
         };
     }
 
+    if (typeof opts.onClose === 'function') {
+        const close = opts.onClose;
+        opts.onClose = () => {
+            instance.remove();
+            close();
+        };
+    } else {
+        opts.onClose = () => {};
+    }
+
     instance = getAnInstance(opts);
     document.body.appendChild(instance.$el);
     instance.shown = true;
