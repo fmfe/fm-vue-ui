@@ -12,6 +12,7 @@
                 </p>
             </div>
         </transition>
+        <span class="focus-border" :class="{'focus-border-active': shown}"></span>
     </div>
 </template>
 

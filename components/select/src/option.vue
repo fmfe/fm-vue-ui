@@ -7,6 +7,7 @@
         @mouseleave="leaveItem" 
         @mouseenter="hoverItem">
         {{label || value}}
+        <i v-if="curSelected === value" class="icon-selected">√</i>
     </li>
 </template>
 
