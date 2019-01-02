@@ -3,6 +3,10 @@
 ```
 npm i fm-vue-ui -S
 ```
+### 引入 FM-ICON (Toast Dialog Alert 会用到字体图标 需要用到以上组件请务必引入)
+```html
+<link rel="stylesheet" href="https://cdn.followme.com/common/fmfont/style.css">
+```
 
 ### 引入 FMUI
 可以引入整个 FMUI，或是根据需要仅引入部分组件。

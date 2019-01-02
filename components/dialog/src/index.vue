@@ -6,9 +6,9 @@
             <div class="fm-model-dialog">
                 <div class="fm-dialog-top" v-if="!validType">
                     <h1>{{title ? title : $ft('fmdialog.title')}}</h1>
-                    <i class="fm-dialog-close-icon" @click="requestClose"></i>
+                    <i class="fm-dialog-close-icon icon-close_24px" @click="requestClose"></i>
                 </div>
-                <div class="fm-dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
+                <div class="fm-dialog-middle">
                     <i class="fm-dialog-middle-icon" v-if="validType" :class="iconClass"></i>
                     <!--可选html渲染-->
                     <span v-html="message" class="html-render" v-if="renderType==='html'" :style="{margin: validType ? '5px 0 15px' : 0}"></span>
@@ -19,7 +19,7 @@
                     <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
                         {{ cancelBtnText ? cancelBtnText : $ft('fmdialog.cancelText')}}
                     </span>
-                    <span class="fm-confirm" @click="onConfirm">
+                    <span class="fm-confirm" :class="{disabled: disabled}" @click="onConfirm">
                         {{ confirmBtnText ? confirmBtnText : $ft('fmdialog.confirmText')}}
                     </span>
                 </div>
@@ -38,6 +38,10 @@
             mask: {
                 type: Boolean,
                 default: false
+            },
+            disabled: {
+              type: Boolean,
+              default: false
             },
             classes: {
                 type: String,

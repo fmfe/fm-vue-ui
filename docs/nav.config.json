@@ -49,6 +49,11 @@
                     "path": "/button"
                 },
                 {
+                    "title": "Toast 对话框",
+                    "name": "toast",
+                    "path": "/toast"
+                },
+                {
                     "title": "Dialog 对话框",
                     "name": "dialog",
                     "path": "/dialog"
