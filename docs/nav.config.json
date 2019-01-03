@@ -49,9 +49,14 @@
                     "path": "/button"
                 },
                 {
-                    "title": "Toast 对话框",
+                    "title": "Toast 提醒",
                     "name": "toast",
                     "path": "/toast"
+                },
+                {
+                    "title": "Notification 通知",
+                    "name": "notification",
+                    "path": "/notification"
                 },
                 {
                     "title": "Dialog 对话框",

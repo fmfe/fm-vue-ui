@@ -33,6 +33,7 @@ const install = function (Vue, opts = {}) {
     });
 
     Vue.prototype.$fmdialog = Dialog;
+    Vue.prototype.$fmtoast = Toast;
     Vue.prototype.$fmutils = utils;
 };
 
@@ -72,7 +73,6 @@ ComponentNames.forEach(name => {
             component: name
         }));
     }
-
     listTemplate.push(`    ${componentName}`);
 });
 

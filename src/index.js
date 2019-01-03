@@ -6,6 +6,7 @@ import locale from 'fm-vue-ui/src/locale';
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
 import Toast from '../components/toast/index.js';
+import Notification from '../components/notification/index.js';
 import Loading from '../components/loading/index.js';
 import Collapse from '../components/collapse/index.js';
 import CollapseItem from '../components/collapse-item/index.js';
@@ -23,6 +24,8 @@ import RadioButtonGroup from '../components/radio-button-group/index.js';
 
 const components = [
     Button,
+    Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,
@@ -65,6 +68,7 @@ export {
     Button,
     Dialog,
     Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,
@@ -82,10 +86,12 @@ export {
 };
 
 export default {
-    version: '2.0.60',
+    version: '2.0.61',
     install,
     Button,
     Dialog,
+    Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,

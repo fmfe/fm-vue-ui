@@ -2,9 +2,10 @@
   export default {
     methods: {
         showDialog(flag) {
+            const type = ['success','info','warning','error']
             this.$fmdialog({
-                type: flag === 1 ? 'success' : 'failure',
-                message: '我是对话框'
+                type: flag ? type[flag - 1] : '',
+                message: '我是对话框内容'
             });
         },
 
@@ -36,8 +37,11 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 :::demo Dialog 以 `$fmdialog` 属性挂载在 Vue Components 上, 可以在组件内通过 `this.$fmdialog` 的方式直接调用。
 
 ```html
-<fm-button @click="showDialog(1)">显示Dialog</fm-button>
-<fm-button @click="showDialog(2)">警告Dialog</fm-button>
+<fm-button @click="showDialog()">不带Icon的Dialog</fm-button>
+<fm-button @click="showDialog(1)">成功</fm-button>
+<fm-button @click="showDialog(2)">信息</fm-button>
+<fm-button @click="showDialog(3)">警告</fm-button>
+<fm-button @click="showDialog(4)">错误</fm-button>
 
 <script>
   export default {

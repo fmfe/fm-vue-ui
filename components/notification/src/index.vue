@@ -1,18 +1,16 @@
 <template>
-    <transition name="fm-common">
-        <div class="fm-notification" :class="classes" v-show="shown" @click="preventStop">
-            <div class="fm-notification-icon">
+    <transition name="fm-notification-fade">
+        <div class="fm-notification" :class="classes" v-show="shown">
+            <div class="fm-notification-header">
                 <i class="fm-notification-icon" :class="[iconClass[type], type]"></i>
-            </div>
-            <div class="fm-notification-message-wrap">
-                <div class="fm-notification-title">
+                <span class="fm-notification-title">
                     {{title}}
-                </div>
-                <div class="fm-notification-notification-content">
-                    <slot>{{message}}</slot>
-                </div>
+                </span>
             </div>
-            <div class="close-icon"></div>
+            <div class="fm-notification-message">
+                <slot>{{message}}</slot>
+            </div>
+            <i class="fm-notification-close-icon icon-close_24px" @click.stop="preventStop"></i>
         </div>
     </transition>
 </template>

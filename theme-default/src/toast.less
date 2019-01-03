@@ -2,8 +2,8 @@
 
 .fm-toast-fade-enter,
 .fm-toast-fade-leave-active {
-    //opacity: 0;
-    transform: translate(-100%);
+    opacity: 0;
+    margin-top: -100%;
 }
 
 .fm-toast {
@@ -18,28 +18,28 @@
     border-radius: 6px;
     text-align: left;
     white-space: normal;
-    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(230, 230, 230, 1);
     padding: 12px 20px;
-    transition: all 2s;
+    transition: all 0.3s;
     .fm-toast-icon {
         font-size: 18px;
-        vertical-align: text-top;
-
+        vertical-align: middle;
+        display: table-cell;
         &.success {
-            color: #1FBB95;
+            color: @icon-color-success;
         }
 
         &.info {
-            color: #999999;
+            color: @icon-color-info;
         }
 
         &.warning {
-            color: #F5AB3B;
+            color: @icon-color-warning;
         }
 
         &.error {
-            color: #EB4E5C;
+            color: @icon-color-error;
         }
     }
 
@@ -47,8 +47,9 @@
         font-size: 14px;
         color: #333;
         line-height: 20px;
-        display: inline-block;
+        display: table-cell;
         max-width: 300px;
+        vertical-align: middle;
         word-break: break-word;
     }
 }

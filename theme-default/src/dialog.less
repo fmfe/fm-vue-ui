@@ -76,7 +76,8 @@
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
 
     .fm-dialog-top {
-        min-width: 430px;
+        min-width: 350px;
+        max-width: 430px;
         height: 50px;
         line-height: 50px;
         border-bottom: @border-width-base solid @border-regular-color-5;
@@ -91,68 +92,39 @@
 
     .fm-dialog-middle {
         font-weight: @font-weight-normal;
-        min-width: 430px;
+        max-width: 430px;
         padding: 28px 20px;
-        text-align: center;
+        //text-align: center;
         box-sizing: border-box;
 
         .fm-dialog-middle-icon {
             display: inline-block;
             position: relative;
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-
-            &.fm-dialog-success-icon {
-                border: @border-width-normal solid #22ac75;
-
-                &::before {
-                    position: absolute;
-                    top: 6px;
-                    left: 6px;
-                    content: "";
-                    width: 13px;
-                    height: 6px;
-                    border: @border-width-normal solid #22ac75;
-                    border-top: none;
-                    border-right: none;
-                    transform: rotate(-45deg);
-                }
+            font-size: 36px;
+            vertical-align: middle;
+            &.success {
+                color: @icon-color-success;
             }
 
-            &.fm-dialog-failure-icon {
-                border: @border-width-normal solid #fc464a;
+            &.info {
+                color: @icon-color-info;
+            }
 
-                &:before {
-                    position: absolute;
-                    bottom: 10px;
-                    left: 50%;
-                    margin-left: -1px;
-                    content: "";
-                    height: 12px;
-                    width: 3px;
-                    background: #fc464a;
-                    border-radius: @border-radius-normal;
-                }
+            &.warning {
+                color: @icon-color-warning;
+            }
 
-                &:after {
-                    position: absolute;
-                    content: "";
-                    left: 50%;
-                    margin-left: -1px;
-                    bottom: 5px;
-                    height: 3px;
-                    width: 3px;
-                    background: #fc464a;
-                    border-radius: @border-radius-base;
-                }
+            &.error {
+                color: @icon-color-error;
             }
         }
 
         span {
-            display: block;
-            font-size: @mid-font-size;
+            display: inline-block;
+            font-size: @normal-font-size;
             line-height: 22px;
+            vertical-align: middle;
+            color: #666;
         }
     }
 
@@ -167,6 +139,7 @@
             line-height: 30px;
             text-align: center;
             font-size: @mid-font-size;
+
             &.fm-confirm {
                 min-width: 80px;
                 height: 30px;
@@ -174,6 +147,7 @@
                 background: @background-color-light-1;
                 color: @color-white;
                 margin-left: 20px;
+
                 &:hover {
                     opacity: 0.8;
                 }

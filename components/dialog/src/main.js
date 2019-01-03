@@ -55,7 +55,7 @@ const Dialog = function (opts) {
         };
     } else {
         opts.onConfirm = () => {
-            // instance.remove();
+            instance.remove();
         };
     }
 
