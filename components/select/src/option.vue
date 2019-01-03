@@ -4,10 +4,10 @@
         'selected': curSelected === value
     }]" :value="value"
         @click.stop="selectOptionClick"
-        @mouseleave="leaveItem" 
+        @mouseleave="leaveItem"
         @mouseenter="hoverItem">
         {{label || value}}
-        <i v-if="curSelected === value" class="icon-selected">√</i>
+        <i v-if="curSelected === value" class="icon-selected  icon-check_24px"></i>
     </li>
 </template>
 

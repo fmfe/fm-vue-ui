@@ -2,82 +2,128 @@
 
 .fm-btn {
     display: inline-block;
-    width: auto;
-    line-height: 24px;
-    background: @background-color-white;
-    border: 1px solid #e1e2e6;
+    background: transparent;
+    border: 1px solid @border-regular-color-6;
     text-align: center;
     color: @color-regular-2;
     font-size: @min-font-size;
-    font-weight: 400;
-    padding: 0 7px;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 4px;
+    outline: none;
+    line-height: 1.5;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.fm-btn-radius-large {
+    border-radius: 100px;
+}
+.fm-btn-loading-icon {
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: transparent;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 auto;
+    margin-right: 2px;
+}
+
+.fm-btn-ghost {
+    border-color: @border-primary-color;
+    color: @color-primary;
+
     &:hover {
         border-color: @border-primary-color;
-        color: @color-primary;
-    }
-    &.fm-btn-disabled {
-        background: @background-color-disabled;
-        color: @color-regular;
-        border: 1px solid @border-regular-color;
-        pointer-events: none;
-    }
-}
-
-.fm-btn-success {
-    border: 1px solid @border-primary-color;
-    color: @color-primary;
-    &:hover {
+        background: @color-primary;
         color: @color-white;
-        text-decoration: none;
-        background: @background-color-light-1;
-    }
-    &.fm-btn-disabled {
-        background: @background-color-disabled;
-        color: @color-regular;
-        border: 1px solid @border-regular-color;
-    }
-}
-
-.fm-btn-default {
-    border: 1px solid @border-regular-color-1;
-    color: @color-regular-2;
-    &:hover {
-        color: @color-white;
-        text-decoration: none;
-        border-color: @border-regular-color-1;
-        background: @border-regular-color-1;
-    }
-    &.fm-btn-disabled {
-        background: @background-color-disabled;
-        color: @color-regular;
-        border: 1px solid @border-regular-color;
     }
 }
 
 .fm-btn-primary {
-    color: @color-white;
+    border-color: @border-primary-color;
     background: @color-primary;
-    border: 1px solid @border-primary-color;
-    font-weight: 500;
+    color: @color-white;
+
     &:hover {
-        opacity: 0.9;
-        color: @color-white;
+        background: @color-primary-hover;
     }
-    &.fm-btn-disabled {
-        background: @background-color-disabled;
-        color: @color-regular;
-        border: 1px solid @border-regular-color;
+}
+
+.fm-btn-default {
+    &:hover {
+        border-color: @border-primary-color;
+        color: @color-primary;
+    }
+}
+
+.fm-btn-invert {
+    &.fm-btn-default {
+        background: #515151;
+        border: none;
+        color: @color-white;
+
         &:hover {
-            opacity: 1;
+            background: #797979;
+        }
+    }
+
+    &.fm-btn-ghost {
+        background: @color-white;
+        border: none;
+        color: #111;
+
+        &:hover {
+            background: #ccc;
         }
     }
 }
 
-.fm-btn-large {
-    min-width: 110px;
-    height: 35px;
-    line-height: 35px;
-    font-size: @mid-font-size;
+.fm-btn-disabled {
+    background: @background-color-disabled;
+    color: @border-disabled-color;
+    border: 1px solid @border-disabled-color;
+    pointer-events: none;
 }
+
+.fm-btn-small {
+    min-height: 24px;
+    min-width: 48px;
+    font-size: @min-font-size;
+    padding: 0 8px;
+    .fm-btn-loading-icon {
+        transform: scale(2.4);
+    }
+}
+
+.fm-btn-medium {
+    min-height: 30px;
+    min-width: 60px;
+    font-size: @normal-font-size;
+    padding: 0 10px;
+    .fm-btn-loading-icon {
+        transform: scale(3);
+    }
+}
+
+.fm-btn-large {
+    min-width: 80px;
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: @mid-font-size;
+    .fm-btn-loading-icon {
+        transform: scale(4);
+    }
+}
+
+.fm-btn-xlarge {
+    min-height: 50px;
+    min-width: 100px;
+    font-size: @max-font-size;
+    padding: 0 20px;
+    .fm-btn-loading-icon {
+        transform: scale(5);
+    }
+}
+
