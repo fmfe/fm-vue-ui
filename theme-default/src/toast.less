@@ -1,0 +1,55 @@
+@import "./common/var.less";
+
+.fm-toast-fade-enter,
+.fm-toast-fade-leave-active {
+    opacity: 0;
+    margin-top: -100%;
+}
+
+.fm-toast {
+    position: fixed;
+    z-index: @z-index-popper;
+    top: 60px;
+    left: 50%;
+    background: @background-color-white;
+    transform: translateX(-50%);
+    display: block;
+    vertical-align: middle;
+    border-radius: 6px;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(230, 230, 230, 1);
+    padding: 12px 20px;
+    transition: all 0.3s;
+    .fm-toast-icon {
+        font-size: 18px;
+        vertical-align: middle;
+        display: table-cell;
+        &.success {
+            color: @icon-color-success;
+        }
+
+        &.info {
+            color: @icon-color-info;
+        }
+
+        &.warning {
+            color: @icon-color-warning;
+        }
+
+        &.error {
+            color: @icon-color-error;
+        }
+    }
+
+    .fm-toast-message {
+        font-size: 14px;
+        color: #333;
+        line-height: 20px;
+        display: table-cell;
+        max-width: 300px;
+        vertical-align: middle;
+        word-break: break-word;
+    }
+}

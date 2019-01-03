@@ -5,6 +5,8 @@ import locale from 'fm-vue-ui/src/locale';
 
 import Button from '../components/button/index.js';
 import Dialog from '../components/dialog/index.js';
+import Toast from '../components/toast/index.js';
+import Notification from '../components/notification/index.js';
 import Loading from '../components/loading/index.js';
 import Collapse from '../components/collapse/index.js';
 import CollapseItem from '../components/collapse-item/index.js';
@@ -22,6 +24,8 @@ import RadioButtonGroup from '../components/radio-button-group/index.js';
 
 const components = [
     Button,
+    Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,
@@ -52,6 +56,7 @@ const install = function (Vue, opts = {}) {
     });
 
     Vue.prototype.$fmdialog = Dialog;
+    Vue.prototype.$fmtoast = Toast;
     Vue.prototype.$fmutils = utils;
 };
 
@@ -62,6 +67,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
     Button,
     Dialog,
+    Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,
@@ -83,6 +90,8 @@ export default {
     install,
     Button,
     Dialog,
+    Toast,
+    Notification,
     Loading,
     Collapse,
     CollapseItem,

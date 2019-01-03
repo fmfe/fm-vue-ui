@@ -4,25 +4,29 @@
             <div class="fm-model-dialog-mask"
                  :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="fm-model-dialog">
-                <div class="fm-dialog-top" v-if="!validType">
+                <div class="fm-dialog-top">
                     <h1>{{title ? title : $ft('fmdialog.title')}}</h1>
-                    <i class="fm-dialog-close-icon" @click="requestClose"></i>
+                    <i class="fm-dialog-close-icon icon-close_24px" @click="requestClose"></i>
                 </div>
-                <div class="fm-dialog-middle" :style="{padding: validType ? '25px 0 15px' : 0}">
-                    <i class="fm-dialog-middle-icon" v-if="validType" :class="iconClass"></i>
-                    <!--可选html渲染-->
-                    <span v-html="message" class="html-render" v-if="renderType==='html'" :style="{margin: validType ? '5px 0 15px' : 0}"></span>
-                    <!--默认是text渲染-->
-                    <span v-text="message" v-else :style="{margin: validType ? '5px 0 15px' : 0}"></span>
+                <div class="fm-dialog-middle">
+                    <slot name="content">
+                        <i class="fm-dialog-middle-icon" v-if="iconType" :class="[iconClass[type], type]"></i>
+                        <!--可选html渲染-->
+                        <span v-html="message" class="html-render" v-if="renderType==='html'"></span>
+                        <!--默认是text渲染-->
+                        <span v-text="message" v-else></span>
+                    </slot>
                 </div>
-                <div class="fm-dialog-bottom" v-if="!validType">
-                    <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
-                        {{ cancelBtnText ? cancelBtnText : $ft('fmdialog.cancelText')}}
-                    </span>
-                    <span class="fm-confirm" @click="onConfirm">
-                        {{ confirmBtnText ? confirmBtnText : $ft('fmdialog.confirmText')}}
-                    </span>
-                </div>
+                <slot name="footer">
+                    <div class="fm-dialog-bottom" v-if="!hideFooter">
+                        <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
+                            {{ cancelBtnText ? cancelBtnText : $ft('fmdialog.cancelText')}}
+                        </span>
+                        <span class="fm-confirm" :class="{disabled: disabled}" @click="onConfirm">
+                            {{ confirmBtnText ? confirmBtnText : $ft('fmdialog.confirmText')}}
+                        </span>
+                    </div>
+                </slot>
             </div>
         </div>
     </transition>
@@ -31,11 +35,21 @@
 <script>
     import i18n from 'fm-vue-ui/src/mixins/i18n';
 
+    const DialogTypes = {
+        SUCCESS: 'success',
+        INFO: 'info',
+        WARNING: 'warning',
+        ERROR: 'error'
+    };
     export default {
         name: 'fm-dialog',
         mixins: [i18n],
         props: {
             mask: {
+                type: Boolean,
+                default: false
+            },
+            disabled: {
                 type: Boolean,
                 default: false
             },
@@ -49,7 +63,7 @@
             },
             type: {
                 type: String,
-                default: '' // success/failure
+                default: '' // DialogTypes 👆
             },
             duration: {
                 type: Number,
@@ -81,27 +95,28 @@
             },
             onCancel: null,
             onConfirm: null,
-            onClose: null
+            onClose: null,
+            // 隐藏footer
+            hideFooter: {
+                type: Boolean,
+                default: false
+            }
         },
         data () {
             return {
-                shown: false
+                shown: false,
+                iconClass: {
+                    [DialogTypes.SUCCESS]: 'icon-info_circle_24px',
+                    [DialogTypes.INFO]: 'icon-info_filled_24px',
+                    [DialogTypes.WARNING]: 'icon-exclamation_filled_24px',
+                    [DialogTypes.ERROR]: 'icon-close_filled_24px'
+                }
             };
         },
 
         computed: {
-            iconClass () {
-                if (this.type === 'success') {
-                    return 'fm-dialog-success-icon';
-                }
-
-                if (this.type === 'failure') {
-                    return 'fm-dialog-failure-icon';
-                }
-            },
-
-            validType () {
-                return ['success', 'failure'].includes(this.type);
+            iconType () {
+                return Object.keys(DialogTypes).includes(this.type.toUpperCase());
             }
         },
 

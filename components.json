@@ -1,10 +1,12 @@
 {
     "button": "./components/button/index.js",
     "dialog": "./components/dialog/index.js",
+    "toast": "./components/toast/index.js",
+    "notification": "./components/notification/index.js",
     "loading": "./components/loading/index.js",
     "collapse": "./components/collapse/index.js",
     "collapse-item": "./components/collapse-item/index.js",
-    "tabs": "./components/tabs/index.js",   
+    "tabs": "./components/tabs/index.js",
     "tab-panel": "./components/tab-panel/index.js",
     "rate": "./components/rate/index.js",
     "carousel": "./components/carousel/index.js",
@@ -16,4 +18,3 @@
     "select": "./components/select/index.js",
     "radio-button-group": "./components/radio-button-group/index.js"
 }
-  
