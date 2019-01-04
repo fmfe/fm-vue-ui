@@ -37,11 +37,12 @@
     .fm-selected-trigger {
         position: relative;
         display: block;
-        font-size: @min-font-size;
+        font-size: @mid-font-size;
         cursor: pointer;
         margin: 0;
         overflow: hidden;
-        padding: 7px 20px 7px 12px;
+        padding: 4px 20px 4px 0;
+        line-height: 22px;
     }
     .fm-select-icon {
         position: absolute;
@@ -66,12 +67,12 @@
     position: absolute;
     width: 100%;
     z-index: @z-index-popper;
-    border-radius: @border-radius-normal;
     background-color: @background-color-white;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     margin: 5px 0;
     overflow: hidden;
+    border-radius: 6px;
     p {
         padding: 6px 0;
         margin: 0;
@@ -83,7 +84,7 @@
 
 .fm-selectable-list {
     position: relative;
-    padding: 6px 0;
+    padding: 5px 0;
     margin: 0;
     box-sizing: border-box;
     max-height: 275px;
@@ -98,8 +99,11 @@
         text-overflow: ellipsis;
         cursor: pointer;
         height: 32px;
-        padding: 6px 16px 8px;
+        padding: 5px 10px;
+        line-height: 22px;
+        font-size: 16px;
         box-sizing: border-box;
+        color: #333;
         &.hover {
             background-color: #f0f0f0;
         }

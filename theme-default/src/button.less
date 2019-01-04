@@ -1,6 +1,6 @@
 @import "./common/var.less";
 
-.fm-btn {
+.fm-button {
     display: inline-block;
     background: transparent;
     border: 1px solid @border-regular-color-6;
@@ -15,10 +15,10 @@
     box-sizing: border-box;
 }
 
-.fm-btn-radius-large {
+.fm-button-radius-large {
     border-radius: 100px;
 }
-.fm-btn-loading-icon {
+.fm-button-loading-icon {
     width: 10px;
     height: 10px;
     border: none;
@@ -30,7 +30,7 @@
     margin-right: 2px;
 }
 
-.fm-btn-ghost {
+.fm-button-ghost {
     border-color: @border-primary-color;
     color: @color-primary;
 
@@ -41,7 +41,7 @@
     }
 }
 
-.fm-btn-primary {
+.fm-button-primary {
     border-color: @border-primary-color;
     background: @color-primary;
     color: @color-white;
@@ -51,15 +51,15 @@
     }
 }
 
-.fm-btn-default {
+.fm-button-default {
     &:hover {
         border-color: @border-primary-color;
         color: @color-primary;
     }
 }
 
-.fm-btn-invert {
-    &.fm-btn-default {
+.fm-button-invert {
+    &.fm-button-default {
         background: #515151;
         border: none;
         color: @color-white;
@@ -69,7 +69,7 @@
         }
     }
 
-    &.fm-btn-ghost {
+    &.fm-button-ghost {
         background: @color-white;
         border: none;
         color: #111;
@@ -80,49 +80,49 @@
     }
 }
 
-.fm-btn-disabled {
+.fm-button-disabled {
     background: @background-color-disabled;
     color: @border-disabled-color;
     border: 1px solid @border-disabled-color;
     pointer-events: none;
 }
 
-.fm-btn-small {
+.fm-button-small {
     min-height: 24px;
     min-width: 48px;
     font-size: @min-font-size;
     padding: 0 8px;
-    .fm-btn-loading-icon {
+    .fm-button-loading-icon {
         transform: scale(2.4);
     }
 }
 
-.fm-btn-medium {
+.fm-button-medium {
     min-height: 30px;
     min-width: 60px;
     font-size: @normal-font-size;
     padding: 0 10px;
-    .fm-btn-loading-icon {
+    .fm-button-loading-icon {
         transform: scale(3);
     }
 }
 
-.fm-btn-large {
+.fm-button-large {
     min-width: 80px;
     min-height: 40px;
     padding: 0 16px;
     font-size: @mid-font-size;
-    .fm-btn-loading-icon {
+    .fm-button-loading-icon {
         transform: scale(4);
     }
 }
 
-.fm-btn-xlarge {
+.fm-button-xlarge {
     min-height: 50px;
     min-width: 100px;
     font-size: @max-font-size;
     padding: 0 20px;
-    .fm-btn-loading-icon {
+    .fm-button-loading-icon {
         transform: scale(5);
     }
 }
