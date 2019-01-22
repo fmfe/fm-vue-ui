@@ -18,7 +18,7 @@
                     </slot>
                 </div>
                 <slot name="footer">
-                    <div class="fm-dialog-bottom" v-if="!hideFooter">
+                    <div class="fm-dialog-bottom" :class="{'fm-dialog-bottom-center': isSingle}" v-if="!hideFooter">
                         <span class="fm-cancel" v-if="!isSingle" @click="onCancel">
                             {{ cancelBtnText ? cancelBtnText : $ft('fmdialog.cancelText')}}
                         </span>
