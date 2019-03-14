@@ -20,6 +20,12 @@
 
 ```html
 <fm-checkbox v-model="checked">复选框</fm-checkbox>
+<fm-checkbox size="medium" v-model="checked">复选框</fm-checkbox>
+<fm-checkbox size="large" v-model="checked">复选框</fm-checkbox>
+
+<fm-checkbox size="medium" disabled v-model="checked">复选框</fm-checkbox>
+<fm-checkbox size="large" disabled v-model="checked">复选框</fm-checkbox>
+<fm-checkbox size="small" disabled v-model="checked">复选框</fm-checkbox>
 
 <script>
     export default {
