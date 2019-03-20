@@ -106,10 +106,10 @@
             return {
                 shown: false,
                 iconClass: {
-                    [DialogTypes.SUCCESS]: 'icon-info_circle_24px',
+                    [DialogTypes.SUCCESS]: 'icon-check_filled_24px',
                     [DialogTypes.INFO]: 'icon-info_filled_24px',
                     [DialogTypes.WARNING]: 'icon-exclamation_filled_24px',
-                    [DialogTypes.ERROR]: 'icon-close_filled_24px'
+                    [DialogTypes.ERROR]: 'icon-exclamation_filled_24px'
                 }
             };
         },

@@ -44,10 +44,10 @@
             return {
                 shown: false,
                 iconClass: {
-                    [ToastTypes.SUCCESS]: 'icon-info_circle_24px',
+                    [ToastTypes.SUCCESS]: 'icon-check_filled_24px',
                     [ToastTypes.INFO]: 'icon-info_filled_24px',
                     [ToastTypes.WARNING]: 'icon-exclamation_filled_24px',
-                    [ToastTypes.ERROR]: 'icon-close_filled_24px'
+                    [ToastTypes.ERROR]: 'icon-exclamation_filled_24px'
                 }
             };
         },
