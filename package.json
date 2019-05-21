@@ -34,9 +34,9 @@
     "build:components": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.components.config.js --progress --hide-modules",
     "prepublishOnly": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
     "test:publish": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
-    "lint": "npm run lint:vue & npm run lint:style",
+    "lint": "npm run lint:vue",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
-    "fix": "npm run fix:vue & npm run fix:style",
+    "fix": "npm run fix:vue",
     "fix:vue": "npx eslint --ext .vue,.js --fix src/**/*.js components/**/*.vue",
     "test": "npx karma start test/karma.conf.js --single-run",
     "commitmsg": "npx commitlint -e"
