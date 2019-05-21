@@ -1,6 +1,6 @@
 {
   "name": "@fmfe/fm-vue-ui",
-  "version": "2.1.7",
+  "version": "2.1.6",
   "description": "Basic Vue Components for FM",
   "main": "lib/fm-vue-ui.common.js",
   "author": "fmfe",
@@ -36,10 +36,10 @@
     "test:publish": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
     "lint": "npm run lint:vue & npm run lint:style",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
-    "lint:style": "npx stylelint \"{sites,components}/**/*.less\" --syntax less",
+    "lint:style": "npx stylelint theme-default/**/*.less --syntax less",
     "fix": "npm run fix:vue & npm run fix:style",
     "fix:vue": "npx eslint --ext .vue,.js --fix src/**/*.js components/**/*.vue",
-    "fix:style": "npx stylelint --fix \"{sites,components}/**/*.less\" --syntax less",
+    "fix:style": "npx stylelint --fix theme-default/**/*.less --syntax less",
     "test": "npx karma start test/karma.conf.js --single-run",
     "commitmsg": "npx commitlint -e"
   },
@@ -78,7 +78,7 @@
     "file-loader": "^1.1.5",
     "gh-pages": "^2.0.1",
     "github-markdown-css": "^2.9.0",
-    "gulp": "^4.0.2",
+    "gulp": "^4.0.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-less": "^4.0.1",
@@ -123,7 +123,7 @@
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.8",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^3.4.1",
+    "webpack-dev-server": "^3.3.1",
     "webpack-md5-hash": "^0.0.5",
     "webpack-node-externals": "^1.6.0",
     "webpack-parallel-uglify-plugin": "^1.0.0"

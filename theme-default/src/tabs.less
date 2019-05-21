@@ -25,19 +25,22 @@
     display: inline-block;
     margin-right: 1px;
     width: 110px;
-    font-size: 0px;
+    font-size: 0;
     color: @color-regular-2;
     font-weight: @font-weight-max;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
+
     &:hover {
         color: @color-primary;
     }
+
     &.fm-tabs-nav-panel {
         height: 43px;
         line-height: 43px;
         font-size: @normal-font-size;
+
         &:after {
             content: '';
             position: absolute;
@@ -49,38 +52,46 @@
             margin-top: -6px;
             background-color: @background-color-light-4;
         }
+
         &:last-child:after {
             display: none;
         }
+
         &.active {
             height: 45px;
             color: @color-primary;
             border-bottom: @border-width-normal solid @color-primary;
         }
     }
+
     &.fm-tabs-nav-card {
         height: 45px;
         line-height: 45px;
-        margin-right: 0px;
+        margin-right: 0;
         font-size: @normal-font-size;
         border: @border-width-base solid @border-regular-color-3;
-        border-right:none;
+        border-right: none;
+
         &:after {
             display: none;
         }
+
         &:first-child {
             border-top-left-radius: @border-radius-max;
         }
-        &:last-child{
+
+        &:last-child {
             border-right: @border-width-base solid @border-regular-color-3;
             border-top-right-radius: @border-radius-max;
         }
+
         &.active {
             color: @color-primary;
             border-bottom-color: @border-white-color;
             background-color: @background-color-white;
         }
     }
+
     .fm-tab-delete-icon {
         position: absolute;
         top: 2px;
@@ -89,6 +100,7 @@
         height: 12px;
         cursor: pointer;
         background-color: @background-color-light-1;
+
         &::before, &::after {
             position: absolute;
             top: 3px;
@@ -97,9 +109,11 @@
             width: 1px;
             background-color: @background-color-white;
         }
+
         &::before {
             transform: rotate(45deg);
         }
+
         &::after {
             transform: rotate(-45deg);
         }

@@ -2,15 +2,16 @@
 
 .fm-zoom-in-top-enter-active,
 .fm-zoom-in-top-leave-active {
-  opacity: 1;
-  transform: scaleY(1);
-  transition: @all-transition;
-  transform-origin: center top;
+    opacity: 1;
+    transform: scaleY(1);
+    transition: @all-transition;
+    transform-origin: center top;
 }
+
 .fm-zoom-in-top-enter,
 .fm-zoom-in-top-leave-active {
-  opacity: 0;
-  transform: scaleY(0);
+    opacity: 0;
+    transform: scaleY(0);
 }
 
 .fm-select {
@@ -24,17 +25,21 @@
     background: @background-color-white;
     border-radius: @border-radius-normal;
     border-bottom: @border-width-base solid @background-color-light-4;
+
     &.is-disabled {
         background: @background-color-disabled;
         cursor: not-allowed;
         padding-left: 6px;
+
         &:hover {
             border-color: @background-color-light-4;
         }
+
         .fm-selected-trigger {
             cursor: not-allowed;
         }
     }
+
     .fm-selected-trigger {
         position: relative;
         display: block;
@@ -45,6 +50,7 @@
         padding: 9px 20px 9px 0;
         line-height: 22px;
     }
+
     .fm-select-icon {
         position: absolute;
         top: 50%;
@@ -57,6 +63,7 @@
         border-top-color: #767676;
         transition: all .3s linear;
         transform-origin: center;
+
         &.active {
             margin-top: -8px;
             transform: rotate(180deg);
@@ -74,6 +81,7 @@
     margin: 5px 0;
     overflow: hidden;
     border-radius: 6px;
+
     p {
         padding: 6px 0;
         margin: 0;
@@ -93,6 +101,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     font-size: @normal-font-size;
+
     .fm-select-option {
         position: relative;
         white-space: nowrap;
@@ -106,12 +115,15 @@
         font-size: 16px;
         box-sizing: border-box;
         color: #333;
+
         &.hover {
             background-color: #f0f0f0;
         }
+
         &.selected {
             position: relative;
             color: @color-primary;
+
             i {
                 position: absolute;
                 right: 16px;

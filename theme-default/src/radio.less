@@ -8,10 +8,12 @@
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
+
     &.is-disabled {
         cursor: not-allowed;
+
         .fm-radio-label {
-            color: @color-regular
+            color: @color-regular;
         }
     }
 }
@@ -28,10 +30,12 @@
     cursor: pointer;
     border-radius: 50%;
     vertical-align: middle;
+
     &.fm-radio-small {
         width: 16px;
         height: 16px;
     }
+
     .fm-radio-inner {
         position: relative;
         display: inline-block;
@@ -41,6 +45,7 @@
         z-index: @z-index-normal;
         border-radius: 50%;
         border: @border-width-base solid @border-regular-color;
+
         &::after {
             position: absolute;
             content: '';
@@ -50,48 +55,59 @@
             height: 6px;
             border-radius: 50%;
             background-color: #fff;
-            transform: translate(-50%,-50%) scale(0);
-            transition: transform .15s cubic-bezier(.71,-.46,.88,.6);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform .15s cubic-bezier(.71, -.46, .88, .6);
         }
     }
+
     &.fm-radio-medium {
         width: 20px;
         height: 20px;
+
         .fm-radio-inner::after {
             width: 8px;
             height: 8px;
         }
     }
+
     &.fm-radio-large {
         width: 24px;
         height: 24px;
+
         .fm-radio-inner::after {
             width: 10px;
             height: 10px;
         }
     }
+
     &.is-disabled {
         background: @background-color-disabled;
         cursor: not-allowed;
+
         .fm-radio-inner {
             border: @border-width-base solid #edeef2;
         }
     }
+
     &.is-checked {
         .fm-radio-inner {
             background: @background-color-light-1;
             border-color: @border-primary-color;
+
             &::after {
-                transform: translate(-50%,-50%) scale(1);
+                transform: translate(-50%, -50%) scale(1);
             }
         }
+
         &.is-disabled {
             cursor: not-allowed;
+
             .fm-radio-inner {
                 background: #eceff5;
                 border: @border-width-base solid #edeef2;
+
                 &::after {
-                    transform: translate(-50%,-50%) scale(1);
+                    transform: translate(-50%, -50%) scale(1);
                 }
             }
         }
