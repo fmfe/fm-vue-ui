@@ -1,65 +1,65 @@
 @import "./common/var.less";
 
-.fm-collapse{
+.fm-collapse {
     width: 100%;
     height: auto;
 }
 
-.fm-collapse-item{
+.fm-collapse-item {
     position: relative;
     border: @border-width-base solid @border-regular-color;
     border-radius: @border-radius-normal;
     overflow: hidden;
 }
 
-.fm-collapse-item-header{
+.fm-collapse-item-header {
     line-height: 14px;
     overflow: hidden;
     padding: 15px;
     background-color: @background-color-gray;
     cursor: pointer;
-    &:hover{
+    &:hover {
         background-color: @background-color-white;
     }
-    &.fm-collapse-item-active{
+    &.fm-collapse-item-active {
         background-color: @background-color-white;
         border-bottom: @border-width-base solid @border-regular-color;
     }
-    span{
+    span {
         display: inline-block;
         //white-space: nowrap;
         //overflow: hidden;
         //text-overflow: ellipsis;
         font-size: @mid-font-size;
-        &.fm-collapse-item-title{
+        &.fm-collapse-item-title {
             width: 145px;
         }
-        &.fm-collapse-item-info{
+        &.fm-collapse-item-info {
             margin-left: 15px;
             color: @color-regular-4;
             width: auto;
         }
-        &.fm-collapse-item-act{
+        &.fm-collapse-item-act {
             position: absolute;
             right: 15px;
             color: @color-regular-3;
-            &:hover{
+            &:hover {
                 color: @color-primary;
             }
         }
     }
 }
 
-.fm-collapse-item-content{
+.fm-collapse-item-content {
     background-color: @background-color-white;
     overflow: hidden;
 }
 
-.fm-collapse-enter-transition{
+.fm-collapse-enter-transition {
     transition: all 0.5s;
     // transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out;
 }
 
-.fm-collapse-leave-transition{
+.fm-collapse-leave-transition {
     transition: all 0.3s;
 }
