@@ -99,7 +99,7 @@ prodConfig.plugins = (prodConfig.plugins || []).concat([
         sourceMap: true,
         uglifyJS: {
             compress: {
-                warnings: false,
+                // warnings: false,
                 /* eslint-disable camelcase */
                 drop_debugger: true,
                 drop_console: true
