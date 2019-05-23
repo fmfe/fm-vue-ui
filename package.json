@@ -34,7 +34,7 @@
     "build:components": "npx cross-env NODE_ENV=production npx webpack --config ./build/webpack.components.config.js --progress --hide-modules",
     "prepublishOnly": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
     "test:publish": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
-    "lint": "npm run lint:vue",
+    "lint": "npm run lint:vue & npm run lint:style",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
     "lint:style": "npx stylelint \"theme-default/**/*.less\" --syntax less",
     "fix": "npm run fix:vue & npm run fix:style",
