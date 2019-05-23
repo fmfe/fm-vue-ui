@@ -36,10 +36,10 @@
     "test:publish": "rm -rf lib && npm run build:entry && npm run build:locale && npm run build:theme && npm run build:mixins && npm run build:utils && npm run build:components && npm run build:package",
     "lint": "npm run lint:vue & npm run lint:style",
     "lint:vue": "npx eslint --ext .vue,.js src/**/*.js components/**/*.vue",
-    "lint:style": "npx stylelint \"theme-default/**/*.less\" --syntax less",
+    "lint:style": "npx stylelint \"{site,components}/**/*.less\" --syntax less",
     "fix": "npm run fix:vue & npm run fix:style",
     "fix:vue": "npx eslint --ext .vue,.js --fix src/**/*.js components/**/*.vue",
-    "fix:style": "npx stylelint --fix \"theme-default/**/*.less\" --syntax less",
+    "fix:style": "npx stylelint --fix \"{site,components}/**/*.less\" --syntax less",
     "test": "npx karma start test/karma.conf.js --single-run",
     "commitmsg": "npx commitlint -e"
   },
