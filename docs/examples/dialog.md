@@ -23,6 +23,14 @@
                 isSingle,
                 onConfirm: () => alert('点击了确认')
             });
+        },
+        showDialogWithoutHeader() {
+            this.$fmdialog({
+                message: '隐藏头部的Dialog',
+                hideHeader: true,
+                isSingle: true,
+                onConfirm: () => alert('点击了确认')
+            });
         }
     }
   }
@@ -105,12 +113,36 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 ```
 :::
 
+对于对话框需要隐藏头部的
+
+:::demo `hideHeader` 属性是一个 `Boolean` 值, 默认是 `false`, 表示是否隐藏头部.
+
+```html
+<fm-button @click="showDialogWithoutHeader()">隐藏头部</fm-button>
+
+<script>
+  export default {
+    methods: {
+        showDialogWithoutHeader() {
+            this.$fmdialog({
+                message: '隐藏头部的Dialog',
+                hideHeader: true,
+                onConfirm: () => alert('点击了确认')
+            });
+        }
+    }
+  };
+</script>   
+```
+:::
+
 ### 属性
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 | :---------- | :-------------- | :---------- | :--------------------------------  | :-------- |
 | mask | 是否显示遮罩 | boolean | - | false |
 | classes | 用于 Dialog 的类名 | string | - | '' |
 | title | Dialog 的标题 |  string | — | '请确认' |
+| hideHeader | 是否隐藏头部 |  boolean | — | false |
 | type | 类型 |  string | success/failure | '' |
 | duration | 自动关闭的时间 |  number | - | 1500 |
 | message | 消息体 |  string | - | '' |

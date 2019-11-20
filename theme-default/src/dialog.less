@@ -144,14 +144,16 @@
             line-height: 30px;
             text-align: center;
             font-size: @mid-font-size;
-
+            &+span{
+                margin-left: 20px;
+            }
             &.fm-confirm {
                 min-width: 60px;
                 height: 30px;
                 border-radius: 15px;
                 background: @background-color-light-1;
                 color: @color-white;
-                margin-left: 20px;
+                
                 font-size: 14px;
                 padding: 0 10px;
                 &:hover {

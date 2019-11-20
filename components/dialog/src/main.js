@@ -17,7 +17,7 @@ const getAnInstance = (props) => {
     if (instance) {
         return instance;
     }
-
+    console.log(props);
     return new DialogConstructor({
         propsData: props,
         el: document.createElement('div')

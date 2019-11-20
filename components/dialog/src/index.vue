@@ -4,7 +4,7 @@
             <div class="fm-model-dialog-mask"
                  :style="{background: mask ? 'rgba(0, 0, 0, 0.298)' : 'transparent' }"></div>
             <div class="fm-model-dialog">
-                <div class="fm-dialog-top">
+                <div class="fm-dialog-top" v-show="!hideHeader">
                     <h1>{{title ? title : $ft('fmdialog.title')}}</h1>
                     <i class="fm-dialog-close-icon icon-close_24px" @click="requestClose"></i>
                 </div>
@@ -56,6 +56,10 @@
             classes: {
                 type: String,
                 default: ''
+            },
+            hideHeader: {
+                type: Boolean,
+                default: false
             },
             title: {
                 type: String,
