@@ -94,15 +94,15 @@
         font-weight: @font-weight-normal;
         max-width: 430px;
         padding: 28px 20px;
-        //text-align: center;
+        display: inline-flex;
         box-sizing: border-box;
-
+        white-space: wrap;
         .fm-dialog-middle-icon {
             display: inline-block;
             position: relative;
             font-size: 36px;
             vertical-align: middle;
-
+            align-self: flex-start;
             &.success {
                 color: @icon-color-success;
             }
@@ -121,10 +121,11 @@
         }
 
         span {
-            display: inline-block;
+            display: inline-flex;
             font-size: @normal-font-size;
             line-height: 22px;
             vertical-align: middle;
+            align-self: center;
             color: #666;
         }
     }

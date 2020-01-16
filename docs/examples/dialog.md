@@ -12,7 +12,7 @@
         showMaskDialog () {
             this.$fmdialog({
                 type: 'success',
-                message: '我是对话框, 并且带了炫酷的遮罩, 哈哈哈哈',
+                message: '我是对话框, 并且带了炫酷的遮罩, 哈哈哈哈我是对话框, 并且带了炫酷的遮罩, 哈哈哈哈',
                 mask: true
             });
         },
